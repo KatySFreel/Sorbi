@@ -1,0 +1,131 @@
+@import "vars";
+@import "libs";
+@import "global";
+
+html {
+	overflow-x: hidden;
+	direction: rtl;
+}
+
+body {
+	font-family: 'Assistant';
+	font-size: 16px;
+	line-height: 24px;
+	font-weight: 400;
+	color: #000000;
+	overflow-x: hidden;
+	direction: rtl;
+}
+
+.container {
+	width: 100%;
+	max-width: 1760px;
+	padding: 0px 80px;
+	margin: 0 auto;
+	direction: rtl;
+}
+
+.btn {
+	@include btn;
+}
+
+// .fancybox__backdrop {
+// 	background: rgba(24, 24, 27, 0.785);
+// }
+
+// .fancybox__content {
+// 	background: none;
+// 	padding: 0;
+// }
+
+// .is-compact .fancybox__content>.f-button.is-close-btn {
+// 	top: -43px;
+// }
+
+
+// #technologies__img *, #structurally__gif * {
+// 	fill-opacity: 0;
+// }
+
+// #technologies__img.finished * , #structurally__gif.finished *{
+// 	fill-opacity: 1;
+// 	transition: fill-opacity .5s;
+// }
+
+.slick-dots .slick-active {
+	background: #000000;
+	border-radius: 32px;
+	width: 40px;
+	height: 12px;
+	transition: 0.2s;
+	cursor: pointer;
+}
+
+.slick-dots li {
+	width: 12px;
+	height: 12px;
+	border: 1px solid #000000;
+	background: none;
+	border-radius: 50px;
+	transition: 0.2s;
+	cursor: pointer;
+}
+
+.slick-dots {
+	bottom: 72px;
+}
+
+
+.slider-control__btn.paused {
+	background-image: url("../img/offer/play.svg");
+	transition: 0.2s;
+}
+
+.slick-dots li button {
+	opacity: 0;
+}
+
+
+.section {
+	margin-top: 128px;
+
+	&__top {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+
+	&__title {
+		@include h3;
+		position: relative;
+
+		&::after {
+			position: absolute;
+			content: '';
+			bottom: -12px;
+			background: $medium-grey;
+			width: 128px;
+			height: 1px;
+			left: 50%;
+			transform: translate(-50%, -50%)
+		}
+	}
+
+	&__link {
+		margin-top: 12px;
+		@include link;
+	}
+}
+
+
+@import "./section/header";
+@import "./section/offer";
+@import "./section/products";
+@import "./section/categories";
+@import "./section/sale";
+@import "./section/banner";
+
+
+@import "./section/form";
+@import "./section/footer";
+@import "media";
