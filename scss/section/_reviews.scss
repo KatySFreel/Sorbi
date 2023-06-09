@@ -1,0 +1,183 @@
+.reviews {
+	background: url('../img/reviews/rev-bg.jpg');
+	background-repeat: no-repeat;
+	background-position: left center;
+	background-size: cover;
+	display: flex;
+	flex-direction: column;
+	gap: 89px;
+	justify-content: center;
+	padding: 196px 0px;
+
+	@include breakpoint(lg) {
+		padding: 38px 0px;
+	}
+
+	.container-reviews {
+		margin: 0;
+		margin-right: auto;
+		max-width: 880px;
+		padding: 0;
+	}
+
+	&__top {
+		padding-bottom: 64px;
+	}
+
+	&__title {
+		color: $bg-light;
+
+		&::after {
+			background: $bg-light;
+		}
+	}
+
+	&__wrapper {
+		display: flex;
+		overflow: hidden;
+		width: 100%;
+		align-items: center;
+		height: 100%;
+		background: none;
+	}
+
+	&__item {
+		position: relative;
+		width: 50%;
+		@include breakpoint(xxx) {
+			width: 70%;
+		}
+		@include breakpoint(lg) {
+			width: 100%;
+		}
+
+		img {
+			object-fit: cover;
+			width: 100%;
+		}
+	}
+
+	.swiper {
+		width: 100%;
+		max-width: 800px;
+	}
+
+	.reviews-slide {
+		&__top {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			flex-direction: row-reverse;
+			margin-bottom: 48px;
+			@include breakpoint(md) {
+				margin-bottom: 198px;
+			}
+		}
+
+		&__stars {
+			display: flex;
+
+			img {
+				display: block;
+				width: 48px;
+				height: 48px;
+				@include breakpoint (md) {
+					width: 16px;
+					height: 16px;
+				}
+			}
+		}
+
+		&__text {
+			padding: 76px 86px;
+			background: $bg-light;
+			width: 100%;
+			@include breakpoint (md) {
+				padding: 24px;
+				line-height: 20px;
+			}
+		}
+
+		&__btns {
+			display: flex;
+			align-items: center;
+			gap: 10px;
+
+			span {
+				display: block;
+				font-weight: 400;
+				font-size: 20px;
+				line-height: 35px;
+				color: $bg-light;
+				@include breakpoint(lg) {
+					color: $bg-dark;
+				}
+			}
+			@include breakpoint(lg) {
+				background: rgba(255, 255, 255, 0.5);
+				border-radius: 4px;
+			}
+		}
+
+		.reviews-slide-next {
+			background-image: url("../img/reviews/arrow-left.svg");
+			background-repeat: no-repeat;
+			width: 24px;
+			height: 24px;
+			background-color: transparent;
+			@include breakpoint(lg) {
+				background-image: url("../img/offer/arrow-prev-min.svg");
+			}
+		}
+
+		.reviews-slide-prev {
+			background-image: url("../img/reviews/arrow-right.svg");
+			background-repeat: no-repeat;
+			width: 24px;
+			height: 24px;
+			background-color: transparent;
+			@include breakpoint(lg) {
+				background-image: url("../img/offer/arrow-next-min.svg");
+			}
+		}
+
+		
+	}
+
+	.swiper-pagination-bullet {
+		border: 0.59375px solid $hair-1;
+	}
+
+	.swiper-pagination-bullet.swiper-pagination-bullet-active.swiper-pagination-bullet-active {
+		background: $hair-3;
+		border-radius: 19px;
+		border: 0.59375px solid $hair-3;
+	}	
+	
+	.prev {
+		opacity: 0;
+		@include breakpoint(sm) {
+			opacity: 1;
+			background-image: url('../img/reviews/arrow-right-mob.svg');
+			width: 32px;
+			height: 80px;
+			right: 0;
+			position: absolute;
+			top: 50%;
+		}
+		
+	}
+	.next {
+		opacity: 0;
+		@include breakpoint(sm) {
+			opacity: 1;
+			background-image: url('../img/reviews/arrow-left-mob.svg');
+			width: 32px;
+			height: 80px;
+			left: 0;
+			top: 50%;
+			position: absolute;
+		}
+		
+	}
+}

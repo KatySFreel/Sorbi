@@ -5,40 +5,86 @@
 		align-items: center;
 		align-content: center;
 		gap: 24px;
+		@include breakpoint (xxx) {
+			flex-direction: column-reverse;
+		}
 	}
 
-	&__item {
+	&__link {
 		width: 100%;
 		height: 480px;
+		display: block;
 		position: relative;
+		overflow: hidden;
+		@include breakpoint(xlg) {
+			height: 290px;
+		}
+		@include breakpoint (xs) {
+			height: 230px;
+		}
+
 
 		&:nth-child(1) {
-			background-image: url("/img/banner/banner2.jpg");
-			background-position: center;
-			background-size: cover;
-			background-repeat: no-repeat;
-			.banner__title, .banner__text {
+			.banner__title,
+			.banner__text {
 				color: #FFFFFF;
+				@include breakpoint(xlg) {
+					max-width: 100%;
+				}
+				span {
+					font-family: 'Montserrat';
+					display: block;
+				}
 			}
 		}
 
-		&:nth-child(2) {
-			background-image: url("/img/banner/banner1.jpg");
-			background-position: center;
-			background-size: cover;
-			background-repeat: no-repeat;
+	}
+
+	&__link {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		overflow: hidden;
+		transition: 1s;
+		position: relative;
+		&:hover img {
+			transform: scale(1.1);
+		}
+
+		img {
+			position: absolute;
+			left: 0;
+			right: 0;
+			top: 0;
+			bottom: 0;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			object-position: left;
+			transition: 1s;
+			z-index: -1;
 		}
 	}
 
+	&__content {
+		padding-right: 64px;
+		margin-top: auto;
+	}
+
 	&__title {
-		margin-top: 120px;
 		font-weight: 600;
 		font-size: 56px;
 		line-height: 70px;
 		color: #000000;
 		text-align: right;
 		margin-bottom: 26px;
-		padding-right: 64px;
+		width: 100%;
+		max-width: 330px;
+		@include breakpoint(lg) {
+			font-weight: 600;
+			font-size: 24px;
+			line-height: 26px;
+		}
 	}
 
 	&__text {
@@ -47,33 +93,49 @@
 		line-height: 60px;
 		text-align: right;
 		color: #000000;
-		margin-bottom: 120px;
-		padding-right: 64px;
+		@include breakpoint(lg) {
+			font-weight: 400;
+			font-size: 16px;
+			line-height: 23px;
+		}
 	}
 
 	&__inner {
-		position: absolute;
-		right: 0;
 		background: #CF6200;
 		display: inline-block;
 		width: 417px;
 		padding: 12px 64px;
-		bottom: 0;
 		display: flex;
 		flex-direction: column;
 		color: $bg-light;
-
-		span {	
-			&:nth-child(1) {
-			font-weight: 600;
-			font-size: 20px;
-			line-height: 35px;
+		margin-top: auto;
+		@include breakpoint (lg) {
+			width: 157px;
+			padding: 7px 24px;
 		}
+
+		span {
+			&:nth-child(1) {
+				font-weight: 600;
+				font-size: 20px;
+				line-height: 35px;
+				@include breakpoint (lg) {
+					font-weight: 600;
+					font-size: 12px;
+					line-height: 13px;
+				}
+			}
+
 			&:nth-child(2) {
 				font-weight: 400;
 				font-size: 16px;
 				line-height: 24px;
+				@include breakpoint (lg) {
+					font-weight: 400;
+					font-size: 10px;
+					line-height: 9px;
+				}
+			}
 		}
 	}
-}
 }

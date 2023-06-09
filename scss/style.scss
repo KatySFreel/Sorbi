@@ -9,12 +9,15 @@ html {
 
 body {
 	font-family: 'Assistant';
-	font-size: 16px;
-	line-height: 24px;
-	font-weight: 400;
-	color: #000000;
+	@include body1;
 	overflow-x: hidden;
 	direction: rtl;
+}
+
+.container-fluid {
+	width: 100%;
+	max-width: 1920px;
+	margin: 0 auto;
 }
 
 .container {
@@ -23,76 +26,89 @@ body {
 	padding: 0px 80px;
 	margin: 0 auto;
 	direction: rtl;
+	position: relative;
+
+	@include breakpoint(lg) {
+		padding: 0px 44px;
+	}
+
+	@include breakpoint(md) {
+		padding: 0px 24px;
+	}
+
+	@include breakpoint(xs) {
+		padding: 0px 15px;
+	}
 }
 
 .btn {
 	@include btn;
+
+	&:hover {
+		opacity: 0.75;
+		transition: 0.2s;
+		box-shadow: 0px 6px 10px 4px rgba(0, 0, 0, 0.15), 0px 2px 3px rgba(0, 0, 0, 0.3);
+	}
 }
 
-// .fancybox__backdrop {
-// 	background: rgba(24, 24, 27, 0.785);
-// }
-
-// .fancybox__content {
-// 	background: none;
-// 	padding: 0;
-// }
-
-// .is-compact .fancybox__content>.f-button.is-close-btn {
-// 	top: -43px;
-// }
-
-
-// #technologies__img *, #structurally__gif * {
-// 	fill-opacity: 0;
-// }
-
-// #technologies__img.finished * , #structurally__gif.finished *{
-// 	fill-opacity: 1;
-// 	transition: fill-opacity .5s;
-// }
-
-.slick-dots .slick-active {
-	background: #000000;
-	border-radius: 32px;
+.prev {
+	background: transparent;
+	background-image: url("../img/offer/arrow-next.png");
 	width: 40px;
-	height: 12px;
-	transition: 0.2s;
-	cursor: pointer;
+	height: 40px;
+	position: absolute;
+	top: 50%;
+	right: 80px;
+	bottom: 78px;
+	z-index: 100;
+
+	@include breakpoint (lg) {
+		width: 33px;
+		height: 80px;
+		right: 0px;
+		background-image: url("../img/offer/arrow-mob-r.svg");
+		background-repeat: no-repeat;
+	}
 }
 
-.slick-dots li {
-	width: 12px;
-	height: 12px;
-	border: 1px solid #000000;
-	background: none;
-	border-radius: 50px;
-	transition: 0.2s;
-	cursor: pointer;
-}
+.next {
+	background: transparent;
+	background-image: url("../img/offer/arrow-prev.png");
+	width: 40px;
+	height: 40px;
+	top: 50%;
+	position: absolute;
+	bottom: 78px;
+	left: 80px;
+	z-index: 100;
 
-.slick-dots {
-	bottom: 72px;
-}
-
-
-.slider-control__btn.paused {
-	background-image: url("../img/offer/play.svg");
-	transition: 0.2s;
-}
-
-.slick-dots li button {
-	opacity: 0;
+	@include breakpoint (lg) {
+		width: 70px;
+		height: 80px;
+		left: 0;
+		background-image: url("../img/offer/arrow-mob-l.svg");
+		background-repeat: no-repeat;
+	}
 }
 
 
 .section {
 	margin-top: 128px;
 
+	@include breakpoint(md) {
+		margin-top: 48px;
+	}
+
 	&__top {
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
+
+		@include breakpoint (lg) {
+			justify-content: center;
+			position: relative;
+			margin-bottom: 40px;
+		}
 	}
 
 	&__title {
@@ -107,16 +123,483 @@ body {
 			width: 128px;
 			height: 1px;
 			left: 50%;
-			transform: translate(-50%, -50%)
+			transform: translate(-50%, -50%);
+
+			@include breakpoint(xxx) {
+				bottom: -4px;
+			}
+		}
+
+		@include breakpoint (lg) {
+			text-align: center;
+			font-weight: 400;
+			font-size: 24px;
+			line-height: 32px;
 		}
 	}
 
 	&__link {
 		margin-top: 12px;
 		@include link;
+
+		@include breakpoint (xlg) {
+			display: none;
+		}
+	}
+
+	&__title-noborder {
+		text-align: center;
+		@include h3;
+
+		&:after {
+			content: none;
+		}
+	}
+
+	&__wrapper {
+		display: flex;
+		overflow: hidden;
+		width: 100%;
+		align-items: center;
+		height: auto;
+		background: $light-grey;
+
+		@include breakpoint(md) {
+			flex-direction: column;
+			background: none;
+		}
+	}
+
+	&__item {
+		width: 50%;
+
+		img {
+			object-fit: cover;
+			width: 100%;
+
+			@include breakpoint(md) {
+				display: none;
+
+			}
+		}
+
+		@include breakpoint(md) {
+			width: 100%;
+		}
+	}
+
+
+	.container-section {
+		margin: 0;
+		margin-right: auto;
+		max-width: 880px;
+	}
+
+	.section-slide {
+		@include breakpoint(md) {
+			background: $light-grey;
+			border-radius: 4px;
+		}
+
+		&__img {
+			display: none;
+
+			@include breakpoint(md) {
+				display: block;
+				border-top-left-radius: 4px;
+				border-top-right-radius: 4px;
+			}
+		}
+
+		&__top {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			flex-direction: row-reverse;
+			margin-bottom: 10%;
+
+			@include breakpoint(md) {
+				background: $light-grey;
+				border-radius: 4px;
+				padding: 8px 16px;
+				margin-bottom: 9px;
+				position: relative;
+			}
+		}
+
+		&__title {
+			@include title;
+			display: block;
+
+			@include breakpoint(xxx) {
+				font-weight: 400;
+				font-size: 16px;
+				line-height: 24px;
+				flex: auto;
+			}
+		}
+
+		&__btns {
+			display: flex;
+			align-items: center;
+			gap: 10px;
+
+			span {
+				display: block;
+				font-weight: 400;
+				font-size: 20px;
+				line-height: 35px;
+			}
+
+			@include breakpoint(md) {
+				position: absolute;
+				top: -50px;
+				background: rgba(255, 255, 255, 0.5);
+				border-radius: 4px;
+			}
+		}
+
+		&__next {
+			background-image: url("../img/news/next.svg");
+			background-repeat: no-repeat;
+			width: 24px;
+			height: 24px;
+		}
+
+		&__prev {
+			background-image: url("../img/news/prev.svg");
+			background-repeat: no-repeat;
+			width: 24px;
+			height: 24px;
+		}
+
+		&__text {
+			@include breakpoint (xxx) {
+				font-weight: 400;
+				font-size: 12px;
+				line-height: 16px;
+				padding: 0px 16px;
+			}
+		}
+
+		&__date {
+			display: block;
+			margin-top: 24px;
+
+			@include breakpoint(xlg) {
+				font-weight: 700;
+				font-size: 12px;
+				line-height: 18px;
+				padding: 0px 16px;
+				margin-top: 17px;
+			}
+		}
+
+		&__btn {
+			@include btn-inner-slide;
+			max-width: 230px;
+			margin-top: 7%;
+			padding: 19px;
+
+			&::before {
+				position: absolute;
+				content: "";
+				background-image: url('../img/news/btn-arrow.svg');
+				background-repeat: no-repeat;
+				background-position: center center;
+				background-size: contain;
+				width: 24px;
+				height: 24px;
+				left: 46px;
+				transition: $transform;
+			}
+
+			&:hover::before {
+				left: 36px;
+				transition: $transform;
+			}
+
+			@include breakpoint(xxx) {
+				font-weight: 400;
+				font-size: 12px;
+				line-height: 16px;
+				margin-bottom: 9px;
+				margin-top: 17px;
+				width: 166px;
+				padding: 8px;
+				opacity: 1;
+
+				&::before {
+					left: 15px;
+					width: 16px;
+					height: 16px;
+					object-fit: contain;
+				}
+
+				&:hover::before {
+					left: 10px;
+				}
+			}
+		}
 	}
 }
 
+.product-cart {
+	&__img {
+		position: relative;
+		width: 100%;
+		object-fit: cover;
+		transition: 1s;
+
+		&:hover {
+			transform: scale(1.1);
+		}
+	}
+
+	&__content {
+		height: 100%;
+		max-height: 111px;
+	}
+
+	&__title {
+		margin-top: 20px;
+		font-family: 'Montserrat';
+		font-style: normal;
+		font-weight: 400;
+		font-size: 20px;
+		line-height: 35px;
+		color: #000000;
+		text-transform: uppercase;
+	}
+
+	&__ingr {
+		margin-top: 4px;
+		font-family: 'Montserrat';
+		font-weight: 400;
+		font-size: 16px;
+		line-height: 28px;
+		color: #000000;
+		margin-bottom: 4px;
+		text-transform: uppercase;
+	}
+
+	&__sabtitle {
+		font-size: 16px;
+		line-height: 24px;
+		color: #000000;
+		margin-bottom: 16px;
+	}
+
+	&__settings {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+
+	&__inner {
+		padding: 0px 16px;
+	}
+
+	&__btn {
+		@include h5SemiBold;
+		background: $dark-grey;
+		color: $bg-light;
+		width: 100%;
+		margin: 0 auto;
+		letter-spacing: 0.02em;
+		border-radius: 4px;
+		margin-top: 26px;
+		padding: 14px;
+		cursor: pointer;
+	}
+
+	.favorite-icon {
+		position: absolute;
+		width: 24px;
+		height: 24px;
+		display: block;
+		top: 16px;
+		z-index: 10;
+		left: 16px;
+		cursor: pointer;
+
+		img {
+			width: 100%;
+			height: 100%;
+			display: block;
+		}
+	}
+
+	.sale-icon {
+		background-image: url("../img/sale/sale.png");
+		background-size: contain;
+		position: absolute;
+		width: 81px;
+		height: 81px;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		top: 16px;
+		z-index: 10;
+		right: 16px;
+		cursor: pointer;
+
+		span {
+			font-weight: 400;
+			font-size: 20px;
+			line-height: 28px;
+			color: $bg-light;
+		}
+
+		@include breakpoint(xxx) {
+			width: 37px;
+			height: 37px;
+
+			span {
+				font-size: 12px;
+				line-height: 10px;
+			}
+		}
+
+		@include breakpoint(sm) {
+			width: 51px;
+			height: 51px;
+
+			span {
+				font-size: 16px;
+				line-height: 24px;
+			}
+		}
+	}
+
+	.reviews-cart {
+		margin: 8px 0px;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+
+		&__link {
+			font-family: 'Montserrat';
+			font-style: normal;
+			font-weight: 400;
+			font-size: 16px;
+			line-height: 28px;
+			text-decoration-line: underline;
+			color: $bg-dark;
+
+		}
+	}
+
+	.stars-wrapper {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 4px;
+	}
+
+	.star {
+		width: 12px;
+		height: 12px;
+	}
+
+	&__wrapper {
+		position: relative;
+
+		.img-text,
+		.img-text-light {
+			position: absolute;
+			background: $face-3;
+			bottom: 0;
+			width: 100%;
+			text-align: center;
+			padding: 4px;
+			@include body1;
+			z-index: 100;
+			left: 0;
+		}
+
+		.img-text-light {
+			background: $hair-1;
+		}
+
+		margin-bottom: 16px;
+		overflow: hidden;
+	}
+
+	.tag {
+		display: flex;
+		align-items: center;
+
+		&__btn {
+			@include body1;
+			color: $primary-2;
+			border: 1px solid $primary-2;
+			border-radius: 4px;
+			padding: 4px 16px;
+			display: inline-block;
+			cursor: pointer;
+		}
+
+		&__arrow {
+			margin-right: 8px;
+			cursor: pointer;
+		}
+	}
+
+	.price-wrapper {
+		display: flex;
+		align-items: center;
+		gap: 31px;
+	}
+
+	.volume {
+		display: flex;
+		align-items: center;
+		flex-direction: row;
+		font-family: "Montserrat";
+		font-weight: 400;
+		font-size: 20px;
+		line-height: 35px;
+		text-transform: uppercase;
+		opacity: 0.7;
+		direction: ltr;
+	}
+
+	.price-new {
+		font-weight: 400;
+		font-size: 20px;
+		line-height: 30px;
+	}
+
+	.price-old {
+		font-weight: 400;
+		font-size: 20px;
+		line-height: 30px;
+		color: #939292;
+		text-decoration: line-through;
+	}
+}
+
+.btn-header {
+
+	&__wrapper {}
+}
+
+.wrapper-click {
+
+	&__btn {}
+
+	&__nemu {}
+
+	&__item {}
+
+	&__link {}
+}
+
+.overflow {
+	overflow-y: hidden
+}
 
 @import "./section/header";
 @import "./section/offer";
@@ -124,8 +607,14 @@ body {
 @import "./section/categories";
 @import "./section/sale";
 @import "./section/banner";
+@import "./section/news";
+@import "./section/benefits";
+@import "./section/sicrets";
+@import "./section/reviews";
+@import "./section/social";
+@import "./section/subscrible";
+@import "./section/menu";
 
 
 @import "./section/form";
 @import "./section/footer";
-@import "media";

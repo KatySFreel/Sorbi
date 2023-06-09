@@ -1,0 +1,325 @@
+.footer {
+	background: $bg-dark;
+	padding-top: 80px;
+	@include breakpoint(lg) {
+		padding-top: 0px;
+	}
+
+
+	&__top {
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+		grid-template-areas:
+				"d c b a"
+				"d c b a"
+				"d c b a";
+
+		@include breakpoint(xxx) {
+			grid-template-areas:
+				"d d d d"
+				"c c b a"
+				"c c b a";
+		}
+		@include breakpoint(lg) {
+			grid-template-areas:
+				"d d d d"
+				"c c c c"
+				"b b b b"
+				"a a a a";
+		}
+	}
+
+	&__item {
+		@include breakpoint(lg){
+			padding: 24px 0px 40px;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+		}
+		&:nth-child(1) {
+			grid-area: d;
+			@include breakpoint (lg) {
+				border-bottom: 1px solid $light-grey;
+				justify-content: space-between;
+				padding: 0;
+			}
+		}
+
+		&:nth-child(2) {
+			grid-area: c;
+			@include breakpoint (lg) {
+				border-bottom: 1px solid $light-grey;
+			}
+		}
+
+		&:nth-child(3) {
+			grid-area: b;
+			@include breakpoint (lg) {
+				border-bottom: 1px solid $light-grey;
+			}
+		}
+
+		&:nth-child(4) {
+			grid-area: a;
+			@include breakpoint (lg) {
+				padding: 24px 0px 40px;
+				text-align: center;
+			}
+		}
+	}
+
+	&__menu {
+		@include breakpoint(lg) {
+			display: flex;
+			flex-direction: row-reverse;
+			gap: 48px;
+		}
+	}
+
+	&__menu-acc {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		@include breakpoint(lg) {
+			display: flex;
+			flex-direction: column;
+		}
+	}
+
+	&__title {
+		color: $bg-light;
+		@include title;
+		@include breakpoint(lg) {
+			margin-bottom: 16px;
+		}
+	}
+
+	&__menu-item {
+		margin: 10px 0px;
+		@include breakpoint(lg) {
+			margin: 0;
+		}
+	}
+
+	&__menu-link {
+		width: auto;
+		color: $bg-light;
+		display: inline-block;
+		position: relative;
+		display: flex;
+		align-items: center;
+		white-space: nowrap;
+
+		span {
+			display: inline-block;
+			margin-left: 10px;
+			@include breakpoint(lg) {
+				display: none;
+			}
+		}
+		&::after {
+			position: absolute;
+			content: '';
+			width: 0;
+			height: 1.2px;
+			bottom: -5px;
+			background-color: $bg-light;
+			left: 0;
+			transition: all .3s ease;
+		}
+		&:hover::after {
+			width: 100%;
+			transition: width .3s ease;
+		}
+
+	}
+
+	&__bottom {
+		margin-top: 104px;
+		border-top: 1px solid $light-grey;
+		padding: 40px 0px;
+		@include breakpoint (lg) {
+			display: none;
+		}
+	}
+
+	&__text {
+		display: flex;
+		align-items: center;
+		color: $bg-light;
+		gap: 13px;
+		justify-content: center;
+	}
+
+	&__text-box {
+		display: flex;
+		align-items: center;
+		flex-direction: row-reverse;
+		gap: 5px;
+
+		&:nth-child(2) {
+			position: relative;
+
+			&::after {
+				position: absolute;
+				content: '';
+				width: 4px;
+				height: 4px;
+				border-radius: 100%;
+				display: block;
+				background: $bg-light;
+				left: -8px;
+			}
+		}
+	}
+
+	&__label {
+		position: relative;
+	}
+}
+
+.menu-acc {
+	@include breakpoint(xxx) {
+		margin-bottom: 48px;
+	}
+	@include breakpoint(lg) {
+		width: 100%;
+		margin-bottom: 0;
+	}
+
+	&__accordion {
+		width: 276px;
+		@include breakpoint(xxx){
+			text-align: center;
+		}
+		@include breakpoint(lg){
+			width: calc(100% + 30px);
+			margin-right: -15px;
+			text-align: right;
+		}
+	}
+
+	.footer__title {
+		@include breakpoint (lg) {
+			margin-bottom: 0;
+			cursor: pointer;
+			padding: 24px;
+			position: relative;
+			&::after, &::before {
+				position: absolute;
+				content: '';
+				width: 20px;
+				height: 2px;
+				background: $bg-light;
+				left: 15px;
+				top: 50%;
+				transition: all .3s ease;
+			}
+			&::before {
+				transform: rotate(90deg);
+				transition: transform .3s ease;
+			}
+
+		}
+	}
+
+	.open .footer__title {
+		opacity: 0.6;
+		&::before {
+			transform: rotate(0deg);
+			transition: transform .3s ease;
+		}
+	}
+
+	&__list {
+		@include breakpoint (lg) {
+			display: none;
+			background: $dark-grey;
+		}
+	}
+
+	&__link {
+		width: auto;
+		transition: $transform;
+		position: relative;
+		@include breakpoint(lg) {
+			margin: 10px 0px;
+			padding: 0px 42px;
+		}
+
+		&::after {
+			position: absolute;
+			content: '';
+			width: 0;
+			height: 1.2px;
+			bottom: -5px;
+			background-color: $bg-light;
+			left: 0;
+			transition: all .3s ease;
+		}
+		&:hover::after {
+			width: 100%;
+			transition: width .3s ease;
+		}
+	}
+}
+
+.menu-icon {
+	display: flex;
+	align-items: center;
+	gap: 32px;
+	margin-top: 10px;
+
+	&__link {
+		width: 32px;
+		height: 32px;
+		display: flex;
+		flex-direction: row-reverse;
+		transition: $transform;
+
+		&:hover {
+			transform: scale(1.1);
+			transition: $transform;
+		}
+
+	}
+}
+
+.icon-logo {
+	margin-top: 8px;
+}
+
+.menu-btns {
+	position: absolute;
+	left: 0;
+	top: 120px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 24px;
+
+	@include breakpoint (lg) {
+		display: none;
+	}
+
+	&__link {
+		background: $primary-1;
+		border-radius: 100%;
+		width: 80px;
+		height: 80px;
+		display: block;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		opacity: 0.75;
+		transition: $transform;
+
+		&:hover {
+			opacity: 1;
+			transition: $transform;
+		}
+		@include breakpoint(xxx) {
+			width: 60px;
+			height: 60px;
+		}
+	}
+}

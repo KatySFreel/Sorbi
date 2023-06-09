@@ -1,218 +1,254 @@
- // base
- $font-family: 'assistant';
- $content-width: 1760px;
- $container-offset: 80px;
- $container-width: calc(var($content-width) + (var($container-offset) * 2));
+	// base
+	$font-family: 'assistant';
+	$content-width: 1760px;
+	$container-offset: 80px;
+	$container-width: calc(var($content-width) + (var($container-offset) * 2));
 
- $transform: all .5s ease;
+	$transform: all .5s ease;
 
- // colors
+	// colors
 
- //base
- $bg-dark: #000000;
- $dark-grey: #3D3D3D;
- $medium-grey: #939292;
- $light-grey: #F9F8F8;
- $bg-light: #FFFFFF;
+	//base
+	$bg-dark: #000000;
+	$dark-grey: #3D3D3D;
+	$medium-grey: #939292;
+	$light-grey: #F9F8F8;
+	$bg-light: #FFFFFF;
 
- //primary
- $primary-1: #FF6C67;
- $primary-2: #770F00;
- $primary-3: #3C1C11;
+	//primary
+	$primary-1: #FF6C67;
+	$primary-2: #770F00;
+	$primary-3: #3C1C11;
 
- //secondary
- $secondary-1: #F3A041;
- $secondary-2: #CF6200;
- $secondary-3: #924602;
+	//secondary
+	$secondary-1: #F3A041;
+	$secondary-2: #CF6200;
+	$secondary-3: #924602;
 
- //status 
- $status-1: #9747FF;
- $status-2: #FD0707;
- $status-3: #477F42;
+	//status 
+	$status-1: #9747FF;
+	$status-2: #FD0707;
+	$status-3: #477F42;
 
 
- //semantic colors
+	//semantic colors
 
- // hair
- $hair-1: #F9F2EC;
- $hair-2: #E0C0A9;
- $hair-3: #D1C1A0;
- $hair-4: #75412E;
+	// hair
+	$hair-1: #F9F2EC;
+	$hair-2: #E0C0A9;
+	$hair-3: #D1C1A0;
+	$hair-4: #75412E;
 
- //face
- $face-1: #E3EAF0;
- $face-2: #CECECE;
- $face-3: #CCD4A5;
- $face-4: #99CC55;
- $face-5: #4EA52A;
- $face-6: #F1F7D8;
+	//face
+	$face-1: #E3EAF0;
+	$face-2: #CECECE;
+	$face-3: #CCD4A5;
+	$face-4: #99CC55;
+	$face-5: #4EA52A;
+	$face-6: #F1F7D8;
 
- //trichilogy
- $trichilogy-1: #FFEBD4;
- $trichilogy-2: #FFD8A9;
- $trichilogy-3: #FFB45D;
- $trichilogy-4: #E16309;
- $trichilogy-5: #CB5527;
+	//trichilogy
+	$trichilogy-1: #FFEBD4;
+	$trichilogy-2: #FFD8A9;
+	$trichilogy-3: #FFB45D;
+	$trichilogy-4: #E16309;
+	$trichilogy-5: #CB5527;
 
- //minikit
- $minikit-1: #E2D0CC;
- $minikit-2: #DD8380;
- $minikit-3: #8D2922;
- $minikit-4: #7A294A;
- $minikit-5: #9E759F;
+	//minikit
+	$minikit-1: #E2D0CC;
+	$minikit-2: #DD8380;
+	$minikit-3: #8D2922;
+	$minikit-4: #7A294A;
+	$minikit-5: #9E759F;
 
-/* stylelint-disable */
-@mixin btn {
-	padding: 12px 0px;
-	@include body1;
-	text-align: center;
-	width: 100%;
-	display: block;
-}
-@mixin btn-dark {
-	background: var(--dark-grey);
-	padding: 16px 0px;
-	color: var(--bg-light);
-	@include body1;
-	text-align: center;
-	width: 100%;
-	display: block;
-}
 
-@mixin btn-light {
-	background: transparent;
-	border: 1px solid #000000;
-	padding: 16px 0px;
-	color: var(--bg-dark);
-	width: 100%;
-	display: block;
-	text-align: center;
-
-	&:hover {
-		background: var(--primary-1);
-		color: var(--bg-light);
-		border: 1px solid transparent;
-		transition: var(--transition);
+	/* stylelint-disable */
+	@mixin btn {
+		@include body1;
+		text-align: center;
+		display: block;
+		padding: 11px;
+		transition: $transform;
+		&:hover {
+			transition: $transform;
+		}
 	}
-}
 
-@mixin h1 {
-	font-size: 64px;
-	font-weight: 400;
-	line-height: 1.25;
-}
-@mixin h2 {
-	font-size: 56px;
-	font-weight: 400;
-	line-height: 1.25;
-}
-@mixin h3 {
-	font-size: 40px;
-	font-weight: 400;
-	line-height: 60px;
-}
-@mixin h3SemiBold {
-	font-size: 40px;
-	font-weight: 600;
-	line-height: 1.5;
-}
-@mixin h4 {
-	font-size: 32px;
-	font-weight: 400;
-	line-height: 1.5;
-}
-@mixin h5 {
-	font-size: 24px;
-	font-weight: 400;
-	line-height: 24px;
-}
-@mixin h5SemiBold {
-	font-size: 24px;
-	font-weight: 500;
-	line-height: 24px;
-}
-@mixin body1 {
-	font-size: 16px;
-	font-weight: 400;
-	line-height: 24px;
-	color: $bg-dark;
-}
+	@mixin btn-dark {
+		background: $dark-grey;
+		padding: 16px 0px;
+		color: $bg-light;
+		@include body1;
+		text-align: center;
+		width: 100%;
+		display: block;
+	}
 
-@mixin body2 {
-	font-size: 1rem;
-	font-weight: 400;
-	line-height: 1.75rem;
-}
+	@mixin btn-light {
+		background: transparent;
+		border: 1px solid $bg-dark;
+		padding: 16px 0px;
+		color: $bg-dark;
+		width: 100%;
+		display: block;
+		text-align: center;
 
-@mixin smallText {
-	font-size: 0.75rem;
-	font-weight: 400;
-	line-height: 1.75rem;
-}
+		&:hover {
+			background: $primary-1;
+			color: $bg-light;
+			border: 1px solid transparent;
+			transition: $transition;
+		}
+	}
 
-@mixin link {
-	font-size: 16px;
-	font-weight: 400;
-	line-height: 28px;
-	color: $bg-dark;
-	text-decoration: underline;
-}
+	@mixin h1 {
+		font-size: 64px;
+		font-weight: 400;
+		line-height: 1.25;
+	}
 
-@mixin linkMedium {
-	font-size: 16px;
-	font-weight: 500;
-	line-height: 28px;
-	color: $bg-dark;
-	text-decoration: underline;
-}
+	@mixin h2 {
+		font-size: 56px;
+		font-weight: 400;
+		line-height: 1.25;
+	}
+
+	@mixin h3 {
+		font-size: 40px;
+		font-weight: 400;
+		line-height: 60px;
+	}
+
+	@mixin h3SemiBold {
+		font-size: 40px;
+		font-weight: 600;
+		line-height: 1.5;
+	}
+
+	@mixin h4 {
+		font-size: 32px;
+		font-weight: 400;
+		line-height: 1.5;
+	}
+
+	@mixin h5 {
+		font-size: 24px;
+		font-weight: 400;
+		line-height: 24px;
+	}
+
+	@mixin h5SemiBold {
+		font-size: 24px;
+		font-weight: 500;
+		line-height: 24px;
+	}
+
+	@mixin body1 {
+		font-size: 16px;
+		font-weight: 400;
+		line-height: 24px;
+		color: $bg-dark;
+	}
+
+	@mixin body2 {
+		font-size: 1rem;
+		font-weight: 400;
+		line-height: 1.75rem;
+	}
+
+	@mixin smallText {
+		font-size: 0.75rem;
+		font-weight: 400;
+		line-height: 1.75rem;
+	}
+
+	@mixin link {
+		font-size: 16px;
+		font-weight: 400;
+		line-height: 28px;
+		color: $bg-dark;
+		text-decoration: underline;
+	}
+
+	@mixin linkMedium {
+		font-size: 16px;
+		font-weight: 500;
+		line-height: 28px;
+		color: $bg-dark;
+		text-decoration: underline;
+	}
+
+	@mixin title {
+		font-size: 24px;
+		line-height: 36px;
+		font-weight: 400;
+	}
 
 
- @mixin breakpoint($point) {
- 	@if $point ==xxx {
- 		@media (max-width: 1124px) {
- 			@content;
- 		}
- 	}
+	@mixin btn-inner-slide {
+		background: $dark-grey;
+		color: $bg-light;
+		border-radius: 4px;
+		position: relative;
+		@include h5SemiBold;
 
- 	@if $point ==xlg {
- 		@media (max-width: 1024px) {
- 			@content;
- 		}
- 	}
+		&::before {
+			position: absolute;
+			content: url('../img/news/btn-arrow.svg');
+			transition: $transform;
+		}
 
- 	@if $point ==lg {
- 		@media (max-width: 992px) {
- 			@content;
- 		}
- 	}
+		&:hover::before {
+			transition: $transform;
+		}
+	}
 
- 	@if $point ==840 {
- 		@media (max-width: 840px) {
- 			@content;
- 		}
- 	}
+	@mixin breakpoint($point) {
+		@if $point ==xxx {
+			@media (max-width: 1130px) {
+				@content;
+			}
+		}
 
- 	@if $point ==md {
- 		@media (max-width: 767px) {
- 			@content;
- 		}
- 	}
+		@if $point ==xlg {
+			@media (max-width: 1024px) {
+				@content;
+			}
+		}
 
- 	@if $point ==sm {
- 		@media (max-width: 576px) {
- 			@content;
- 		}
- 	}
+		@if $point ==lg {
+			@media (max-width: 992px) {
+				@content;
+			}
+		}
 
- 	@if $point ==xs {
- 		@media (max-width: 426px) {
- 			@content;
- 		}
- 	}
+		@if $point ==840 {
+			@media (max-width: 840px) {
+				@content;
+			}
+		}
 
- 	@if $point ==xxs {
- 		@media (max-width: 370px) {
- 			@content;
- 		}
- 	}
- }
+		@if $point ==md {
+			@media (max-width: 767px) {
+				@content;
+			}
+		}
+
+		@if $point ==sm {
+			@media (max-width: 576px) {
+				@content;
+			}
+		}
+
+		@if $point ==xs {
+			@media (max-width: 426px) {
+				@content;
+			}
+		}
+
+		@if $point ==xxs {
+			@media (max-width: 370px) {
+				@content;
+			}
+		}
+	}

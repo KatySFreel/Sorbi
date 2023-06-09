@@ -1,0 +1,213 @@
+.dot::before {
+	box-shadow: 0 0 20px var(--c), 0 0 60px var(--c);
+}
+
+.pie {
+	--p: 20;
+}
+
+.pie:before {
+	background: radial-gradient(farthest-side, var(--c) 98%, #0000) top/8px 8px no-repeat,
+		conic-gradient(var(--c) calc(var(--p) * 1%), #0000 0);
+	-webkit-mask: radial-gradient(farthest-side,
+			#0000 calc(99% - 8px),
+			#000 calc(100% - 8px));
+	mask: radial-gradient(farthest-side,
+			#0000 calc(99% - 8px),
+			#000 calc(100% - 8px));
+}
+
+.no-round:before {
+	background-size: 0 0, auto;
+}
+
+.no-round:after {
+	content: none;
+}
+
+.timer-wrapper {
+	display: grid;
+	grid-template-columns: repeat(4,1fr);
+	align-items: center;
+	gap: 24px;
+	color: $bg-dark;
+	justify-content: center;
+}
+
+.timer {
+	&__menu {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 24px;
+	}
+
+	&__item {
+		width: 124px;
+		height: 124px;
+		position: relative;
+		border: 8px;
+		border-color: transparent;
+		border-radius: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		&::after {
+			position: absolute;
+			content: '';
+			background: $bg-dark;
+			border-radius: 100%;
+		}
+	}
+	&__title {
+		font-weight: 400;
+		font-size: 16px;
+		line-height: 24px;
+	}
+
+	.before\:-inset-2::before {
+		content: var(--tw-content);
+		inset: 0.5rem;
+  }
+
+}
+
+.sale {
+
+	&__wrapper {
+		background: $bg-light;
+		@include breakpoint(lg) {
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+		}
+	}
+
+	&__item {
+		position: relative;
+		img {
+			object-fit: cover;
+			width: 100%;
+			@include breakpoint(md) {
+				display: block;
+				
+			}
+		}
+		&:nth-child(1) {
+			padding-left: 80px;
+			@include breakpoint(lg) {
+				width: 100%;
+				padding-left: 0px;
+				img {
+					object-fit: cover;
+					width: 100%;
+					@include breakpoint(md) {
+						display: block;
+						
+					}
+				}
+			}
+		}
+		&:nth-child(2) {
+			@include breakpoint(lg) {
+				width: 100%;
+				margin-top: 24px;
+				img {
+					object-fit: cover;
+					width: 100%;
+					@include breakpoint(md) {
+						display: block;
+						
+					}
+				}
+			}
+		}
+
+	}
+
+	&__title-abs {
+		position: absolute;
+		color: $bg-light;
+		font-weight: 700;
+		font-size: 128px;
+		line-height: 112px;
+		width: 100%;
+		max-width: 432px;
+		text-align: left;
+		z-index: 10;
+		top: 80px;
+		left: 162px;
+		@include breakpoint(xxx) {
+			font-size: 108px;
+			line-height: 102px;
+			top: 60px;
+			left: 132px;
+		}
+		@include breakpoint(sm) {
+			font-size: 48px;
+			line-height: 48px;
+			left: 24px;
+			top: 34px;
+			max-width: 157px;
+		}
+	}
+
+	.container-sale {
+		margin: 0;
+		margin-left: auto;
+		padding: 0px 0px 0px 80px;
+		@include breakpoint(xlg) {
+			padding: 0 15px;
+			margin: 0 auto;
+		}
+	}
+
+	&__top {
+	}
+
+	&__title {
+		margin-bottom: 24px;
+	}
+}
+
+.sale-product {
+	margin-top: 24px;
+
+	&__menu {
+		display: flex;
+		gap: 24px;
+		align-items: flex-start;
+		@include breakpoint(sm) {
+		 flex-direction: column;
+		 justify-content: center;
+		}
+	}
+
+	&__cart {
+		width: 100%;
+	}
+
+	&__img {
+	}
+
+	&__content {
+		
+	}
+
+	&__inner {
+		@include breakpoint(md) {
+			padding: 8px;
+		}
+	}
+
+	&__title {
+		margin-top: 0;
+	}
+
+	&__sabtitle {
+	}
+
+	&__settings {
+	}
+}
+

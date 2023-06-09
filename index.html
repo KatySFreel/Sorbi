@@ -6,57 +6,58 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <meta name="theme-color" content="#ffffff">
-  <link rel="shortcut icon" href="img/favicon.png" type="image/png">
+  <link rel="shortcut icon" href="./img/favicon.png" type="image/png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
   <title>Dr.Sorbie</title>
-  <link rel="stylesheet" type="text/css" href="slick/slick.css" />
-  <link rel="stylesheet" type="text/css" href="slick/slick-theme.css" />
+  <link rel="stylesheet" href="css/cdn.jsdelivr.net_npm_swiper@9_swiper-bundle.min.css">
+  <link rel="stylesheet" href="css/nanoscroller.css">
+
   <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body>
+<body id="body">
   <header class="header">
     <div class="container">
       <div class="header__wrapper">
         <!-- Menu -->
         <nav class="nav">
           <ul class="header__menu header-menu">
-            <li class="header-menu__item burder">
-              <a href="" class="burder__link">
-                <img src="img/header/burger.svg" class="burder__img" alt="">
-              </a>
+            <li class="header-menu__item burger">
+                <img src="./img/header/burger.svg" class="burger__img active" alt="">
+                <img src="./img/header/cross.svg" class="burger-cross" alt="">
             </li>
             <li class="header-menu__item leng">
               <a href="" class="leng__link">
-                <img src="img/header/leng.svg" class="leng__img" alt="">
+                <img src="./img/header/leng.svg" class="leng__img" alt="">
               </a>
             </li>
             <li class="header-menu__item icon">
               <a href="" class="icon__link">
-                <img src="img/header/currency.svg" class="icon__img" alt="">
+                <img src="./img/header/currency.svg" class="icon__img" alt="">
               </a>
             </li>
             <li class="header-menu__item favorites">
               <a href="" class="favorites__link">
-                <img src="img/header/favorites.svg" class="favorites__img" alt="">
+                <img src="./img/header/favorites.svg" class="favorites__img" alt="">
               </a>
             </li>
             <li class="header-menu__item basket">
               <a href="" class="basket__link">
-                <img src="img/header/basket.svg" class="basket__img" alt="">
+                <img src="./img/header/basket.svg" class="basket__img" alt="">
+                <span class="basket-active">10</span>
               </a>
             </li>
             <li class="header-menu__item login">
               <a href="" class="login__link">
-                <img src="img/header/login.svg" class="login__img" alt="">
+                <img src="./img/header/login.svg" class="login__img" alt="">
               </a>
             </li>
             <li class="header-menu__item search">
               <a href="" class="search__link">
-                <img src="img/header/search.svg" class="search__img" alt="">
+                <img src="./img/header/search.svg" class="search__img" alt="">
               </a>
             </li>
           </ul>
@@ -64,7 +65,7 @@
         <!-- Menu End -->
         <div class="logo">
           <a href="" class="logo__link">
-            <img src="img/header/logo.svg" alt="" class="logo__img">
+            <img src="./img/header/logo.svg" alt="" class="logo__img">
           </a>
         </div>
 
@@ -72,12 +73,179 @@
           <a href="" class="btn header__btn">
             לחנות
           </a>
-          <a href="" class="btn header__btn">
-            למקצוענים
-          </a>
+          <div class="btn-header__wrapper wrapper-click">
+            <button id="btn-header" class="btn header__btn select-header wrapper-click__btn">
+              למקצוענים
+            </button>
+            <ul class="header-bottom__list wrapper-click__nemu">
+              <li class="header-bottom__item wrapper-click__item">
+                <a href="" class="header-bottom__link wrapper-click__link">
+                  לאנשי מקצוע
+                </a>
+              </li>
+              <li class="header-bottom__item wrapper-click__item">
+                <a href="" class="header-bottom__link wrapper-click__link">
+                  טיפול אישי
+                </a>
+              </li>
+            </ul>
+          </div>
         </div>
-
       </div>
+    </div>
+    <div class="header-menu-burger">
+        <div class="header-menu-top">
+          <div class="container">
+            <nav class="header-menu-nav">
+              <div class="header__btns">
+                <a href="" class="btn header__btn">
+                  לחנות
+                </a>
+                <div class="btn-header__wrapper wrapper-click">
+                  <button id="btn-header-mob" class="btn header__btn select-header wrapper-click__btn">
+                    למקצוענים
+                  </button>
+                  <ul class="header-bottom__list wrapper-click__nemu">
+                    <li class="header-bottom__item wrapper-click__item">
+                      <a href="" class="header-bottom__link wrapper-click__link">
+                        לאנשי מקצוע
+                      </a>
+                    </li>
+                    <li class="header-bottom__item wrapper-click__item">
+                      <a href="" class="header-bottom__link wrapper-click__link">
+                        טיפול אישי
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <ul class="header__menu header-menu">
+                <li class="header-menu__item favorites">
+                  <a href="" class="favorites__link">
+                    <img src="./img/header/favorites.svg" class="favorites__img" alt="">
+                  </a>
+                </li>
+                <li class="header-menu__item login">
+                  <a href="" class="login__link">
+                    <img src="./img/header/login.svg" class="login__img" alt="">
+                  </a>
+                </li>
+              </ul>
+              <div class="search">
+                <form action="" class="search__form">
+                    <input class="search__input" type="text" placeholder="חיפוש מוצר או טיפול">
+                    <button class="search__btn" type="submit">
+                      <img src="./img/header/search.svg" class="search__img" alt="">
+                    </button>
+                </form>
+              </div>
+              <ul class="header-menu-list">
+                <li class="header-menu-item">
+                  <a href="" class="header-menu__link opacity-anim">
+                    טיפוח שיער
+                  </a>
+                </li>
+                <li class="header-menu-item">
+                  <a href="" class="header-menu__link opacity-anim">
+                    טיפוח פנים
+                  </a>
+                </li>
+                <li class="header-menu-item">
+                  <a href="" class="header-menu__link opacity-anim">
+                    טריכולוגיה
+                  </a>
+                </li>
+                <li class="header-menu-item">
+                  <a href="" class="header-menu__link opacity-anim">
+                    מיני קיט
+                  </a>
+                </li>
+                <li class="header-menu-item">
+              <a href="" class="header-menu__link opacity-anim">
+                בקשת ייעוץ
+              </a>
+                </li>
+                <li class="header-menu-item">
+                  <a href="" class="header-menu__link opacity-anim">
+                    עזרה
+                  </a>
+                </li>
+                <li class="header-menu-item">
+                  <a href="" class="header-menu__link opacity-anim">
+                    אודותינו
+                  </a>
+                </li>
+                <li class="header-menu-item">
+                  <a href="" class="header-menu__link opacity-anim">
+                    חיפוש סלון קרוב
+                  </a>
+                </li>
+                <li class="header-menu-item">
+                  <a href="" class="header-menu__link opacity-anim">
+                    שיתוף פעולה
+                  </a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+        <div class="header-menu-bottom">
+          <div class="container">
+            <div class="header-menu-bottom__wrapper">
+              <div class="header-menu-bottom__content">
+                <ul class="header-menu-bottom-list">
+                  <li class="footer__menu-item">
+                    <a href="" class="footer__menu-link" target="_blank" rel="noopener nofollow">
+                      <img src="./img/menu/contact/email.svg" alt="">
+                    </a>
+                  </li>
+                  <li class="footer__menu-item">
+                    <a href="" class="footer__menu-link" target="_blank" rel="noopener nofollow">
+                      <img src="./img/menu/contact/call.svg" alt="">
+                    </a>
+                  </li>
+                  <li class="footer__menu-item">
+                    <a href="" class="footer__menu-link" target="_blank" rel="noopener nofollow">
+                      <img src="./img/menu/contact/wh.svg" alt="">
+                    </a>
+                  </li>
+                  <li class="footer__menu-item burger-menu__contact-item">
+                    <a href="" class="footer__menu-link" target="_blank" rel="noopener nofollow">
+                      <img src="./img/menu/contact/c-1.svg" alt="">
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <ul class="header-menu-bottom-list">
+                <li class="footer__menu-item">
+                  <a href="" class="footer__menu-link footer__link" target="_blank" rel="noopener nofollow">
+                    <img src="./img/menu/social/fc.svg" alt="">
+                  </a>
+                </li>
+                <li class="footer__menu-item">
+                  <a href="" class="footer__menu-link footer__link" target="_blank" rel="noopener nofollow">
+                    <img src="./img/menu/social/tw.svg" alt="">
+                  </a>
+                </li>
+                <li class="footer__menu-item">
+                  <a href="" class="footer__menu-link footer__link" target="_blank" rel="noopener nofollow">
+                    <img src="./img/menu/social/tel.svg" alt="">
+                  </a>
+                </li>
+                <li class="footer__menu-item">
+                  <a href="" class="footer__menu-link footer__link" target="_blank" rel="noopener nofollow">
+                    <img src="./img/menu/social/inst.svg" alt="">
+                  </a>
+                </li>
+                <li class="footer__menu-item">
+                  <a href="" class="footer__menu-link footer__link" target="_blank" rel="noopener nofollow">
+                    <img src="./img/menu/social/yu.svg" alt="">
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
     </div>
   </header>
 
@@ -85,72 +253,94 @@
     <!-- offer -->
     <section class="offer">
       <div class="offer__wrapper">
-        <ul class="offer__slider">
-          <li class="offer__item slide-1">
-            <img src="img/offer/1.jpg" class="offer__img" alt="">
-            <div class="container">
-              <p class="offer__title">
-                למעצבי שיער
-              </p>
-              <p class="offer__subtitle">
-                מוצרי שיער מקצועיים
-              </p>
-              <a href="" class="btn offer__btn">
-                מידע נוסף
-              </a>
+        <div class="swiper offer__slider">
+          <!-- Additional required wrapper -->
+          <div class="swiper-wrapper news-swiper__wrapper">
+            <!-- Slides -->
+            <div class="offer__item slide-1 swiper-slide">
+              <img src="./img/offer/1.jpg" class="offer__img" alt="">
+              <div class="container">
+                <div class="wrap">
+                  <p class="offer__title">
+                    למעצבי שיער
+                  </p>
+                  <p class="offer__subtitle">
+                    טיפול בעור
+                  </p>
+                  <a href="" class="btn offer__btn">
+                    מידע נוסף
+                  </a>
+                </div>
+              </div>
             </div>
+            <div class="offer__item slide-2 swiper-slide">
+              <img src="./img/offer/2.jpg" class="offer__img" alt="">
+              <div class="container">
+                <div class="wrap">
+                  <p class="offer__title">
+                    שיער אורגני
+                  </p>
+                  <p class="offer__subtitle">
+                    יַחַס
+                  </p>
+                  <a href="" class="btn offer__btn">
+                    מידע נוסף
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="offer__item slide-3 swiper-slide">
+              <img src="./img/offer/3.jpg" class="offer__img" alt="">
+              <div class="container">
+                <div class="wrap">
+                  <p class="offer__title">
+                    טריכולוגיה
+                  </p>
+                  <p class="offer__subtitle">
+                    טיפול בעור
+                  </p>
+                  <a href="" class="btn offer__btn">
+                    מידע נוסף
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="offer__item slide-4 swiper-slide">
+              <img src="./img/offer/4.jpg" class="offer__img" alt="">
+              <div class="container">
+                <div class="wrap">
+                  <p class="offer__title">
+                    טיפול בעור
+                  </p>
+                  <p class="offer__subtitle">
+                    טיפול בעור
+                  </p>
+                  <a href="" class="btn offer__btn">
+                    מידע נוסף
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- If we need pagination -->
+          <div class="slider-nav">
+            <button class="prev offer-prev"></button>
+            <button class="next offer-next"></button>
+          </div>
+          <div class="slider__control">
+            <button class="offer-next next-arrow"></button>
+            <button class="pause" id='toggle'></button>
+            <div class="slider__pagination"></div>
+            <button class="offer-prev prev-arrow"></button>
+          </div>
 
-          </li>
-          <li class="offer__item slide-2">
-            <img src="img/offer/2.jpg" class="offer__img" alt="">
-            <div class="container">
-              <p class="offer__title">
-                למעצבי שיער
-              </p>
-              <p class="offer__subtitle">
-                מוצרי שיער מקצועיים
-              </p>
-              <a href="" class="btn offer__btn">
-                מידע נוסף
-              </a>
-            </div>
-          </li>
-          <li class="offer__item slide-3">
-            <img src="img/offer/3.jpg" class="offer__img" alt="">
-            <div class="container">
-              <p class="offer__title">
-                למעצבי שיער
-              </p>
-              <p class="offer__subtitle">
-                מוצרי שיער מקצועיים
-              </p>
-              <a href="" class="btn offer__btn">
-                מידע נוסף
-              </a>
-            </div>
-          </li>
-          <li class="offer__item slide-4">
-            <img src="img/offer/4.jpg" class="offer__img" alt="">
-            <div class="container">
-              <p class="offer__title">
-                למעצבי שיער
-              </p>
-              <p class="offer__subtitle">
-                מוצרי שיער מקצועיים
-              </p>
-              <a href="" class="btn offer__btn">
-                מידע נוסף
-              </a>
-            </div>
-          </li>
-        </ul>
-      </div>
+        </div>
     </section>
     <!-- offer end -->
 
     <!-- product -->
     <section class="product section">
-      <div class="container">
+      <div class="container product-container">
         <div class="product__wrapper">
           <div class="section__top">
             <h3 class="product__title section__title">
@@ -160,235 +350,257 @@
               לכל המוצרים
             </a>
           </div>
-          <div class="swiper">
+          <div class="swiper product-swiper">
+            <!-- Additional required wrapper -->
+            <div class="swiper-wrapper">
+              <!-- Slides -->
+              <div class="swiper-slide product-cart">
+                <div class="product__img-wrapper product-cart__wrapper">
+                  <img src="./img/products/1.jpg" alt="" class="product__img product-cart__img">
+                  <span class="favorite-icon">
+                    <img src="./img/header/favorites.svg" alt="">
+                  </span>
+                  <span class="img-text">טיפוח העור </span>
+                </div>
+                <div class="product-cart__inner">
+
+                  <div class="tag">
+                    <div class="tag__btn">
+                      הקנייה הטובה ביותר
+                    </div>
+                    <span>
+                      <img src="./img/arrow.svg" alt="" class="tag__arrow">
+                    </span>
+                  </div>
+                  <div class="product__content product-cart__content">
+                    <p class="product__content-title product-cart__title">
+                      SKIN IMPROVER
+                    </p>
+                    <p class="product__ingr product-cart__ingr">
+                      ACTIVE VITAMIN C
+                    </p>
+                    <p class="product__sabtitle product-cart__sabtitle">
+                      אנטי-אייג'ינג רב עוצמה, מונע את הזדקנות העור
+                    </p>
+                  </div>
+                  <div class="product__settings product-cart__settings">
+                    <div class="price-wrapper">
+                      <span class="price price-new">
+                        מחיר
+                      </span>
+                      <span class="price price-old">
+                        מחיר
+                      </span>
+                    </div>
+                    <div class="volume">
+                      <span>
+                        <img src="./img/arrow.svg" alt="" class="tag__arrow">
+                      </span>
+                      400 ml
+                    </div>
+                  </div>
+                  <a href="" class="btn product__btn product-cart__btn">קני עכשיו</a>
+                </div>
+              </div>
+              <div class="swiper-slide product-cart">
+                <div class="product__img-wrapper product-cart__wrapper">
+                  <img src="./img/products/1.jpg" alt="" class="product__img product-cart__img">
+                  <span class="favorite-icon">
+                    <img src="./img/header/favorites.svg" alt="">
+                  </span>
+                  <span class="img-text">טיפוח העור </span>
+                </div>
+                <div class="product-cart__inner">
+                  <div class="tag">
+                    <div class="tag__btn">
+                      הקנייה הטובה ביותר
+                    </div>
+                    <span>
+                      <img src="./img/arrow.svg" alt="" class="tag__arrow">
+                    </span>
+                  </div>
+                  <div class="product__content product-cart__content">
+                    <p class="product__content-title product-cart__title">
+                      SKIN IMPROVER
+                    </p>
+                    <p class="product__ingr product-cart__ingr">
+                      ACTIVE VITAMIN C
+                    </p>
+                    <p class="product__sabtitle product-cart__sabtitle">
+                      אנטי-אייג'ינג רב עוצמה, מונע את הזדקנות העור
+                    </p>
+                  </div>
+                  <div class="product__settings product-cart__settings">
+                    <div class="price-wrapper">
+                      <span class="price price-new">
+                        מחיר
+                      </span>
+                      <span class="price price-old">
+                        מחיר
+                      </span>
+                    </div>
+                    <div class="volume">
+                      <span>
+                        <img src="./img/arrow.svg" alt="" class="tag__arrow">
+                      </span>
+                      400 ml
+                    </div>
+                  </div>
+                  <a href="" class="btn product-cart__btn product__btn">קני עכשיו</a>
+                </div>
+              </div>
+              <div class="swiper-slide product-cart">
+                <div class="product__img-wrapper product-cart__wrapper">
+                  <img src="./img/products/2.jpg" alt="" class="product__img product-cart__img">
+                  <span class="favorite-icon">
+                    <img src="./img/header/favorites.svg" alt="">
+                  </span>
+                  <span class="img-text img-text-light">טיפוח העור</span>
+                </div>
+                <div class="product-cart__inner">
+                  <div class="tag">
+                    <div class="tag__btn">
+                      להיט העונה
+                    </div>
+                    <span>
+                      <img src="./img/arrow.svg" alt="" class="tag__arrow">
+                    </span>
+                  </div>
+                  <div class="product__content product-cart__content">
+                    <p class="product__content-title product-cart__title">
+                      mini Sorbi
+                    </p>
+                    <p class="product__ingr product-cart__ingr">
+                      travel kit
+                    </p>
+                    <p class="product__sabtitle product-cart__sabtitle">
+                      נסי את המוצרים על שיערך, על מנת לראות את התוצאה
+                    </p>
+                  </div>
+                  <div class="product__settings product-cart__settings">
+                    <div class="price-wrapper">
+                      <span class="price price-new">
+                        מחיר
+                      </span>
+                      <span class="price price-old">
+                        מחיר
+                      </span>
+                    </div>
+                    <div class="volume">
+                      <span>
+                        <img src="./img/arrow.svg" alt="" class="tag__arrow">
+                      </span>
+                      400 ml
+                    </div>
+                  </div>
+                  <a href="" class="btn product__btn product-cart__btn">קני עכשיו</a>
+                </div>
+              </div>
+              <div class="swiper-slide product-cart">
+                <div class="product__img-wrapper product-cart__wrapper">
+                  <img src="./img/products/4.jpg" alt="" class="product__img product-cart__img">
+                  <span class="favorite-icon">
+                    <img src="./img/header/favorites.svg" alt="">
+                  </span>
+                  <span class="img-text">טיפוח העור</span>
+                </div>
+                <div class="product-cart__inner">
+                  <div class="tag">
+                    <div class="tag__btn">
+                      הקנייה הטובה ביותר
+                    </div>
+                    <span>
+                      <img src="./img/arrow.svg" alt="" class="tag__arrow">
+                    </span>
+                  </div>
+                  <div class="product__content product-cart__content">
+                    <p class="product__content-title product-cart__title">
+                      SKIN IMPROVER
+                    </p>
+                    <p class="product__ingr product-cart__ingr">
+                      ACTIVE VITAMIN C
+                    </p>
+                    <p class="product__sabtitle product-cart__sabtitle">
+                      אנטי-אייג'ינג רב עוצמה, מונע את הזדקנות העור
+                    </p>
+                  </div>
+                  <div class="product__settings product-cart__settings">
+                    <div class="price-wrapper">
+                      <span class="price price-new">
+                        מחיר
+                      </span>
+                      <span class="price price-old">
+                        מחיר
+                      </span>
+                    </div>
+                    <div class="volume">
+                      <span>
+                        <img src="./img/arrow.svg" alt="" class="tag__arrow">
+                      </span>
+                      400 ml
+                    </div>
+                  </div>
+                  <a href="" class="btn product__btn product-cart__btn">קני עכשיו</a>
+                </div>
+              </div>
+              <div class="swiper-slide product-cart">
+                <div class="product__img-wrapper product-cart__wrapper">
+                  <img src="./img/products/3.jpg" alt="" class="product__img product-cart__img">
+                  <span class="favorite-icon">
+                    <img src="./img/header/favorites.svg" alt="">
+                  </span>
+                  <span class="img-text img-text-light">טיפוח העור</span>
+                </div>
+                <div class="product-cart__inner">
+                  <div class="tag">
+                    <div class="tag__btn">
+                      אקסקלוסיבי
+                    </div>
+                    <span>
+                      <img src="./img/arrow.svg" alt="" class="tag__arrow">
+                    </span>
+                  </div>
+                  <div class="product__content product-cart__content">
+                    <p class="product__content-title product-cart__title">
+                      VITA LIQUID
+                    </p>
+                    <p class="product__ingr product-cart__ingr">
+                      AСID PH THERAPY ACTIVATORt
+                    </p>
+                    <p class="product__sabtitle product-cart__sabtitle">
+                      נוזל משקם לכל סוגי השיער
+                    </p>
+                  </div>
+                  <div class="product__settings product-cart__settings">
+                    <div class="price-wrapper">
+                      <span class="price price-new">
+                        מחיר
+                      </span>
+                      <span class="price price-old">
+                        מחיר
+                      </span>
+                    </div>
+                    <div class="volume">
+                      <span>
+                        <img src="./img/arrow.svg" alt="" class="tag__arrow">
+                      </span>
+                      400 ml
+                    </div>
+                  </div>
+                  <a href="" class="btn product__btn product-cart__btn">קני עכשיו</a>
+                </div>
+              </div>
+            </div>
+            <!-- If we need pagination -->
+            <div class="swiper-pagination"></div>
+
+            <!-- If we need scrollbar -->
+            <div class="swiper-scrollbar"></div>
           </div>
-          <ul class="product__list">
-            <li class="product__item">
-              <div class="product__img-wrapper">
-                <img src="img/products/1.jpg" alt="" class="product__img">
-                <span class="favorite-icon">
-                  <img src="/img/header/favorites.svg" alt="">
-                </span>
-                <span class="img-text">טיפוח העור </span>
-              </div>
-              <div class="tag">
-                <div class="tag__btn">
-                  הקנייה הטובה ביותר
-                </div>
-                <span>
-                  <img src="img/arrow.svg" alt="" class="tag__arrow">
-                </span>
-              </div>
-              <div class="product__content">
-                <p class="product__content-title">
-                  SKIN IMPROVER
-                </p>
-                <p class="product__ingr">
-                  ACTIVE VITAMIN C
-                </p>
-                <p class="product__sabtitle">
-                  אנטי-אייג'ינג רב עוצמה, מונע את הזדקנות העור
-                </p>
-              </div>
-              <div class="product__settings">
-                <div class="price-wrapper">
-                  <span class="price price-new">
-                    מחיר
-                  </span>
-                  <span class="price price-old">
-                    מחיר
-                  </span>
-                </div>
-                <div class="volume">
-                  <span>
-                    <img src="img/arrow.svg" alt="" class="tag__arrow">
-                  </span>
-                  400 ml
-                </div>
-              </div>
-              <a href="" class="btn product__btn">קני עכשיו</a>
-            </li>
-            <li class="product__item">
-              <div class="product__img-wrapper">
-                <img src="img/products/2.jpg" alt="" class="product__img">
-                <span class="favorite-icon">
-                  <img src="/img/header/favorites.svg" alt="">
-                </span>
-                <span class="img-text img-text-light">טיפוח העור</span>
-              </div>
-              <div class="tag">
-                <div class="tag__btn">
-                  הקנייה הטובה ביותר
-                </div>
-                <span>
-                  <img src="img/arrow.svg" alt="" class="tag__arrow">
-                </span>
-              </div>
-              <div class="product__content">
-                <p class="product__content-title">
-                  mini Sorbi
-                </p>
-                <p class="product__ingr">
-                  ACTIVE VITAMIN C
-                </p>
-                <p class="product__sabtitle">
-                  אנטי-אייג'ינג רב עוצמה, מונע את הזדקנות העור
-                </p>
-              </div>
-              <div class="product__settings">
-                <div class="price__wrapper">
-                  <span class="price price-new">
-                    מחיר
-                  </span>
-                  <span class="price price-old">
-                    מחיר
-                  </span>
-                </div>
-                <div class="volume">
-                  <span>
-                    <img src="img/arrow.svg" alt="" class="tag__arrow">
-                  </span>
-                  400 ml
-                </div>
-              </div>
-              <a href="" class="btn product__btn">קני עכשיו</a>
-            </li>
-            <li class="product__item">
-              <div class="product__img-wrapper">
-                <img src="img/products/3.jpg" alt="" class="product__img">
-                <span class="favorite-icon">
-                  <img src="/img/header/favorites.svg" alt="">
-                </span>
-                <span class="img-text img-text-light">טיפוח העור</span>
-              </div>
-              <div class="tag">
-                <div class="tag__btn">
-                  הקנייה הטובה ביותר
-                </div>
-                <span>
-                  <img src="img/arrow.svg" alt="" class="tag__arrow">
-                </span>
-              </div>
-              <div class="product__content">
-                <p class="product__content-title">
-                  VITA LIQUID
-                </p>
-                <p class="product__ingr">
-                  ACTIVE VITAMIN C
-                </p>
-                <p class="product__sabtitle">
-                  אנטי-אייג'ינג רב עוצמה, מונע את הזדקנות העור
-                </p>
-              </div>
-              <div class="product__settings">
-                <div class="price__wrapper">
-                  <span class="price price-new">
-                    מחיר
-                  </span>
-                  <span class="price price-old">
-                    מחיר
-                  </span>
-                </div>
-                <div class="volume">
-                  <span>
-                    <img src="img/arrow.svg" alt="" class="tag__arrow">
-                  </span>
-                  400 ml
-                </div>
-              </div>
-              <a href="" class="btn product__btn">קני עכשיו</a>
-            </li>
-            <li class="product__item">
-              <div class="product__img-wrapper">
-                <img src="img/products/4.jpg" alt="" class="product__img">
-                <span class="favorite-icon">
-                  <img src="/img/header/favorites.svg" alt="">
-                </span>
-                <span class="img-text">טיפוח העור</span>
-              </div>
-              <div class="tag">
-                <div class="tag__btn">
-                  הקנייה הטובה ביותר
-                </div>
-                <span>
-                  <img src="img/arrow.svg" alt="" class="tag__arrow">
-                </span>
-              </div>
-              <div class="product__content">
-                <p class="product__content-title">
-                  SKIN IMPROVER
-                </p>
-                <p class="product__ingr">
-                  ACTIVE VITAMIN C
-                </p>
-                <p class="product__sabtitle">
-                  אנטי-אייג'ינג רב עוצמה, מונע את הזדקנות העור
-                </p>
-              </div>
-              <div class="product__settings">
-                <div class="price__wrapper">
-                  <span class="price price-new">
-                    מחיר
-                  </span>
-                  <span class="price price-old">
-                    מחיר
-                  </span>
-                </div>
-                <div class="volume">
-                  <span>
-                    <img src="img/arrow.svg" alt="" class="tag__arrow">
-                  </span>
-                  400 ml
-                </div>
-              </div>
-              <a href="" class="btn product__btn">קני עכשיו</a>
-            </li>
-            <li class="product__item">
-              <div class="product__img-wrapper">
-                <img src="img/products/4.jpg" alt="" class="product__img">
-                <span class="favorite-icon">
-                  <img src="/img/header/favorites.svg" alt="">
-                </span>
-                <span class="img-text">טיפוח העור</span>
-              </div>
-              <div class="tag">
-                <div class="tag__btn">
-                  הקנייה הטובה ביותר
-                </div>
-                <span>
-                  <img src="img/arrow.svg" alt="" class="tag__arrow">
-                </span>
-              </div>
-              <div class="product__content">
-                <p class="product__content-title">
-                  SKIN IMPROVER
-                </p>
-                <p class="product__ingr">
-                  ACTIVE VITAMIN C
-                </p>
-                <p class="product__sabtitle">
-                  אנטי-אייג'ינג רב עוצמה, מונע את הזדקנות העור
-                </p>
-              </div>
-              <div class="product__settings">
-                <div class="price__wrapper">
-                  <span class="price price-new">
-                    מחיר
-                  </span>
-                  <span class="price price-old">
-                    מחיר
-                  </span>
-                </div>
-                <div class="volume">
-                  <span>
-                    <img src="img/arrow.svg" alt="" class="tag__arrow">
-                  </span>
-                  400 ml
-                </div>
-              </div>
-              <a href="" class="btn product__btn">קני עכשיו</a>
-            </li>
-          </ul>
+
+          <button class="prev swiper-button-next"></button>
+          <button class="next swiper-button-prev"></button>
+
         </div>
       </div>
     </section>
@@ -406,7 +618,7 @@
           </div>
           <ul class="categories__list">
             <li class="categories__item">
-              <img src="img/categories/4.jpg" alt="" class="categories__img">
+              <img src="./img/categories/4.jpg" alt="" class="categories__img">
               <div class="categories__content">
                 <p class="categories__title">
                   הטיפולים שלנו
@@ -422,7 +634,7 @@
               </div>
             </li>
             <li class="categories__item">
-              <img src="img/categories/3.jpg" alt="" class="categories__img">
+              <img src="./img/categories/3.jpg" alt="" class="categories__img">
               <div class="categories__content">
                 <p class="categories__title">
                   טיפוח השיער
@@ -438,7 +650,7 @@
               </div>
             </li>
             <li class="categories__item">
-              <img src="img/categories/2.jpg" alt="" class="categories__img">
+              <img src="./img/categories/2.jpg" alt="" class="categories__img">
               <div class="categories__content">
                 <p class="categories__title">
                   טריכולוגיה
@@ -454,7 +666,7 @@
               </div>
             </li>
             <li class="categories__item">
-              <img src="img/categories/1.jpg" alt="" class="categories__img">
+              <img src="./img/categories/1.jpg" alt="" class="categories__img">
               <div class="categories__content">
                 <p class="categories__title">
                   טיפוח העור
@@ -477,21 +689,152 @@
 
     <!-- sale -->
     <section class="sale section">
-      <div class="sale__wrapper">
-        <img src="img/sale/girl.jpg" alt="" class="sale__img">
-        <span class="sale__title">
-          מבצעים חמים
-        </span>
-      </div>
-      <div class="sale__content">
-        <div class="container">
-          <div class="sale__inner">
-            <ul class="sale__circle-list">
-              <div id="rotate_90"></div>
-              <div id="rotate_180"></div>
-              <div id="rotate_270"></div>
-              <div id="rotate_360"></div>
-            </ul>
+      <div class="sale__wrapper section__wrapper">
+        <div class="sale__item section__item">
+          <img src="./img/sale/girl.jpg" alt="">
+          <p class="sale__title-abs">
+            מבצעים חמים
+          </p>
+        </div>
+        <div class="sale__item section__item">
+          <div class="container container-sale container-section">
+            <div class="sale__top">
+              <h3 class="sale__title section__title-noborder">
+                עד סוף המבצע נותרו
+              </h3>
+            </div>
+            <div class="timer">
+              <div class="timer-wrapper">
+                <div
+                  class="before:rounded-full after:rounded-full after:absolute before:absolute before:-inset-2 pie timer__item"
+                  style="--p: 20; --c: #939292">
+                  <span class="absolute inset-0 w-full h-full rounded-full" id="dot-second"></span>
+                  <h3 class="timer__title">
+                    <span class="timer__number" id="seconds"></span>
+                  </h3>
+                </div>
+                <div
+                  class="before:rounded-full after:rounded-full after:absolute before:absolute before:-inset-2 pie timer__item"
+                  style="--p: 20; --c: #939292">
+                  <span class="absolute inset-0 w-full h-full" id="dot-minute"></span>
+                  <h3 class="timer__title">
+                    <span class="timer__number" id="minutes"></span>
+                  </h3>
+                </div>
+                <div
+                  class="before:rounded-full after:rounded-full after:absolute before:absolute before:-inset-2 pie timer__item"
+                  style="--p: 20; --c: #939292">
+                  <span class="absolute inset-0 w-full h-full" id="dot-hour"></span>
+                  <h3 class="timer__title">
+                    <span class="timer__number" id="hour"></span>
+                  </h3>
+                </div>
+                <div
+                  class="before:rounded-full after:rounded-full after:absolute before:absolute before:-inset-2 pie timer__item"
+                  style="--p: 20; --c: #939292">
+                  <span class="absolute inset-0 w-full h-full" id="dot-day"></span>
+                  <h3 class="timer__title">
+                    <span class="timer__number" id="day"></span>
+                  </h3>
+                </div>
+              </div>
+            </div>
+            <div class="product sale-product">
+              <ul class="product__menu sale-product__menu">
+                <li class="product-cart sale-product__cart">
+                  <div class="product__img-wrapper product-cart__wrapper sale-product__cart">
+                    <img src="./img/sale/prod1.jpg" alt="" class="product__img product-cart__img sale-product__img">
+                    <span class="favorite-icon">
+                      <img src="./img/header/favorites.svg" alt="">
+                    </span>
+                    <span class="sale-icon">
+                      <span>מבצע</span>
+                    </span>
+                    <span class="img-text img-text-light">טיפוח שיער</span>
+                  </div>
+                  <div class="product-cart__inner sale-product__inner">
+                    <div class="product__content product-cart__content sale-product__content">
+                      <p class="product__content-title product-cart__title sale-product__title">
+                        SKIN IMPROVER
+                      </p>
+                      <p class="product__ingr product-cart__ingr">
+                        ACTIVE VITAMIN C
+                      </p>
+                      <p class="product__sabtitle product-cart__sabtitle sale-product__sabtitle">
+                        אנטי-אייג'ינג רב עוצמה, מונע את הזדקנות העור
+                      </p>
+                    </div>
+                    <div class="product__settings product-cart__settings sale-product__settings">
+                      <div class="price-wrapper">
+                        <span class="price price-new">
+                          מחיר
+                        </span>
+                        <span class="price price-old">
+                          מחיר
+                        </span>
+                      </div>
+                    </div>
+                    <a href="" class="btn product__btn product-cart__btn">קני עכשיו</a>
+                  </div>
+                </li>
+                <li class="product-cart sale-product__cart">
+                  <div class="product__img-wrapper product-cart__wrapper sale-product__cart">
+                    <img src="./img/sale/prod2.jpg" alt="" class="product__img product-cart__img sale-product__img">
+                    <span class="favorite-icon">
+                      <img src="./img/header/favorites.svg" alt="">
+                    </span>
+                    <span class="sale-icon">
+                      <span>מבצע</span>
+                    </span>
+                    <span class="img-text">טיפוח העור </span>
+                  </div>
+                  <div class="product-cart__inner sale-product__inner">
+                    <div class="tag">
+                      <div class="tag__btn">
+                        הקנייה הטובה ביותר
+                      </div>
+                      <span>
+                        <img src="./img/arrow.svg" alt="" class="tag__arrow">
+                      </span>
+                    </div>
+                    <div class="reviews-cart">
+                      <a href="" class="reviews-cart__link">
+                        38 отзывов
+                      </a>
+                      <div class="stars-wrapper">
+                        <img src="./img/sale/star.svg" alt="" class="star">
+                        <img src="./img/sale/star.svg" alt="" class="star">
+                        <img src="./img/sale/star.svg" alt="" class="star">
+                        <img src="./img/sale/star.svg" alt="" class="star">
+                        <img src="./img/sale/star.svg" alt="" class="star">
+                      </div>
+                    </div>
+                    <div class="product__content product-cart__content sale-product__content">
+                      <p class="product__content-title product-cart__title sale-product__title">
+                        SKIN IMPROVER
+                      </p>
+                      <p class="product__ingr product-cart__ingr">
+                        ACTIVE VITAMIN C
+                      </p>
+                      <p class="product__sabtitle product-cart__sabtitle sale-product__sabtitle">
+                        אנטי-אייג'ינג רב עוצמה, מונע את הזדקנות העור
+                      </p>
+                    </div>
+                    <div class="product__settings product-cart__settings sale-product__settings">
+                      <div class="price-wrapper">
+                        <span class="price price-new">
+                          מחיר
+                        </span>
+                        <span class="price price-old">
+                          מחיר
+                        </span>
+                      </div>
+                    </div>
+                    <a href="" class="btn product__btn product-cart__btn">קני עכשיו</a>
+                  </div>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
@@ -502,46 +845,880 @@
     <section class="banner section">
       <div class="container">
         <div class="banner__wrapper">
-          <div class="banner__item">
-            <p class="banner__title">
-              הנחות
-              משתלמות
-              ביותר
-            </p>
-            <p class="banner__text">
-              על מוצרי סדרת
-              repair
-            </p>
+          <a href="" class="banner__link">
+            <img src="./img/banner/banner2.jpg" alt="">
+            <div class="banner__content">
+              <p class="banner__title">
+                הנחות
+                משתלמות
+                ביותר
+              </p>
+              <p class="banner__text">
+                על מוצרי סדרת
+                <span>repair</span>
+              </p>
+            </div>
             <div class="banner__inner">
               <span>עד סוף המבצע נותרו</span>
               <span>
                 2 ימים 08:51:37
               </span>
             </div>
-          </div>
-          <div class="banner__item">
-            <p class="banner__title">
-              20% הנחה
-            </p>
-            <p class="banner__text">
-              בקניית מוצרי טיפוח העור
-            </p>
+          </a>
+          <a href="" class="banner__link">
+            <img src="./img/banner/banner1.jpg" alt="">
+            <div class="banner__content">
+              <p class="banner__title">
+                20% הנחה
+              </p>
+              <p class="banner__text">
+                בקניית מוצרי טיפוח העור
+              </p>
+            </div>
             <div class="banner__inner">
               <span>עד סוף המבצע נותרו</span>
               <span>
                 2 ימים 08:51:37
               </span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+    <!-- banner end -->
+
+    <!-- news -->
+    <section class="news section">
+      <div class="news__wrapper section__wrapper">
+        <div class="news__item section__item">
+          <div class="container container-news container-section">
+            <div class="news__top section__top">
+              <h3 class="news__title section__title">
+                חדשות
+              </h3>
+              <a href="" class="news__link section__link">
+                לכל המוצרים
+              </a>
+            </div>
+            <div class="swiper news-swiper">
+              <!-- Additional required wrapper -->
+              <div class="swiper-wrapper news-swiper__wrapper">
+                <!-- Slides -->
+                <div class="swiper-slide news-slide section-slide">
+                  <img src="./img/news/bg-1.jpg" class="section-slide__img" alt="">
+                  <div class="news-slide__top section-slide__top ">
+                    <div class="news-slide__btns section-slide__btns">
+                      <button class="prev news-slide-prev section-slide__prev"></button>
+                      <span>1</span>
+                      <button class="next news-slide-next section-slide__next"></button>
+                    </div>
+                    <p class="news-slide__title section-slide__title">
+                      פתרון נקי ומרענן! העור שלנו צריך להתחדש באופן קבוע
+                    </p>
+                  </div>
+                  <p class="news-slide__text section-slide__text">
+                    כדי שהוא יהיה חלק ואחיד ללא קרם בסיס ,התאים חייבים להתחדש באופן קבוע ומהיר. ככל שאנו מתבגרים התהליך
+                    הזה אורך זמן רב יותר. חומצות, הן הפתרון האידיאלי לבעיות רבות. מדלקת ועד קמטים. הן עוזרות להילחם
+                    באקנה,
+                    פיגמנטציה ובנקבוביות מוגדלות. התרחיץ הטיפולי Active renewal lotion הינו הדבר האולטימטיבי לכך. הנוסחה
+                    הייחודית שלו המכילה חומצות פרי וויטמין C פעיל תורמת לפתרון בעיות מסוג זה. החומצה ההיאלורונית הכלולה
+                    בתרחיץ הטיפולי מסייעת ללחות את השכבה העליונה של העור ומגנה מפני ההשפעות האגרסיביות של חומצות. כבר
+                    לאחר
+                    ימי השימוש הרא...
+                  </p>
+                  <span class="date section-slide__date">
+                    אלכס סורבי 10.10.2022
+                  </span>
+                  <a href="" class="news-slide__btn btn section-slide__btn">
+                    קראו עוד
+                  </a>
+                </div>
+                <div class="swiper-slide news-slide section-slide">
+                  <img src="./img/news/bg-1.jpg" class="section-slide__img" alt="">
+                  <div class="news-slide__top section-slide__top">
+                    <div class="news-slide__btns section-slide__btns">
+                      <button class="prev news-slide-prev section-slide__prev"></button>
+                      <span>2</span>
+                      <button class="next news-slide-next section-slide__next"></button>
+                    </div>
+                    <p class="news-slide__title section-slide__title">
+                      פתרון נקי ומרענן! העור שלנו צריך להתחדש באופן קבוע
+                    </p>
+                  </div>
+                  <p class="news-slide__text section-slide__text">
+                    כדי שהוא יהיה חלק ואחיד ללא קרם בסיס ,התאים חייבים להתחדש באופן קבוע ומהיר. ככל שאנו מתבגרים התהליך
+                    הזה אורך זמן רב יותר. חומצות, הן הפתרון האידיאלי לבעיות רבות. מדלקת ועד קמטים. הן עוזרות להילחם
+                    באקנה,
+                    פיגמנטציה ובנקבוביות מוגדלות. התרחיץ הטיפולי Active renewal lotion הינו הדבר האולטימטיבי לכך. הנוסחה
+                    הייחודית שלו המכילה חומצות פרי וויטמין C פעיל תורמת לפתרון בעיות מסוג זה. החומצה ההיאלורונית הכלולה
+                    בתרחיץ הטיפולי מסייעת ללחות את השכבה העליונה של העור ומגנה מפני ההשפעות האגרסיביות של חומצות. כבר
+                    לאחר
+                    ימי השימוש הרא...
+                  </p>
+                  <span class="date section-slide__date">
+                    אלכס סורבי 10.10.2022
+                  </span>
+                  <a href="" class="news-slide__btn btn section-slide__btn">
+                    קראו עוד
+                  </a>
+                </div>
+              </div>
+              <!-- If we need pagination -->
+              <div class="swiper-pagination"></div>
+
+              <!-- If we need scrollbar -->
+              <div class="swiper-scrollbar"></div>
+            </div>
+            <button class="prev news-slide-prev section-slide-next"></button>
+            <button class="next news-slide-next section-slide-prev"></button>
+          </div>
+
+        </div>
+        <div class="news__item section__item">
+          <img src="./img/news/bg-1.jpg" alt="">
+        </div>
+      </div>
+      <div class="video-wrapper video">
+        <div class="video__wrapper section__wrapper">
+          <div class="video__item section__item">
+            <img src="./img/news/bg-2.jpg" alt="">
+          </div>
+          <div class="video__item section__item">
+            <div class="container container-video container-section">
+              <div class="video__top section__top">
+                <h3 class="video__title section__title">
+                  חדשות וידאו
+                </h3>
+                <a href="" class="video__link section__link">
+                  לכל המוצרים
+                </a>
+              </div>
+              <div class="swiper video-swiper">
+                <!-- Additional required wrapper -->
+                <div class="swiper-wrapper news-swiper__wrapper">
+                  <!-- Slides -->
+                  <div class="swiper-slide video-slide section-slide">
+                    <img src="./img/news/bg-2.jpg" alt="" class="section-slide__img">
+                    <div class="video-slide__top section-slide__top">
+                      <div class="video-slide__btns section-slide__btns">
+                        <button class="prev video-slide-prev section-slide__prev"></button>
+                        <span>1</span>
+                        <button class="next video-slide-next section-slide__next"></button>
+                      </div>
+                      <p class="video-slide__title section-slide__title">
+                        פתרון נקי ומרענן! העור שלנו צריך להתחדש באופן קבוע
+                      </p>
+                    </div>
+                    <p class="video-slide__text section-slide__text">
+                      כדי שהוא יהיה חלק ואחיד ללא קרם בסיס ,התאים חייבים להתחדש באופן קבוע ומהיר. ככל שאנו מתבגרים
+                      התהליך הזה אורך זמן רב יותר. חומצות, הן הפתרון האידיאלי לבעיות רבות. מדלקת ועד קמטים. הן עוזרות
+                      להילחם באקנה, פיגמנטציה ובנקבוביות מוגדלות. התרחיץ הטיפולי Active renewal lotion הינו הדבר
+                      האולטימטיבי לכך. הנוסחה הייחוד...
+                    </p>
+                    <span class="date section-slide__date">
+                      אלכס סורבי 10.10.2022
+                    </span>
+                    <a href="" class="video-slide__btn btn section-slide__btn">
+                      לצפיה בסרטון
+                    </a>
+                  </div>
+                  <div class="swiper-slide video-slide section-slide">
+                    <img src="./img/news/bg-2.jpg" class="section-slide__img" alt="">
+                    <div class="video-slide__top section-slide__top">
+                      <div class="video-slide__btns section-slide__btns">
+                        <button class="prev video-slide-prev section-slide__prev"></button>
+                        <span>2</span>
+                        <button class="next video-slide-next section-slide__next"></button>
+                      </div>
+                      <p class="video-slide__title section-slide__title">
+                        פתרון נקי ומרענן! העור שלנו צריך להתחדש באופן קבוע
+                      </p>
+                    </div>
+                    <p class="video-slide__text section-slide__text">
+                      כדי שהוא יהיה חלק ואחיד ללא קרם בסיס ,התאים חייבים להתחדש באופן קבוע ומהיר. ככל שאנו מתבגרים
+                      התהליך
+                      הזה אורך זמן רב יותר. חומצות, הן הפתרון האידיאלי לבעיות רבות. מדלקת ועד קמטים. הן עוזרות להילחם
+                      באקנה,
+                      פיגמנטציה ובנקבוביות מוגדלות. התרחיץ הטיפולי Active renewal lotion הינו הדבר האולטימטיבי לכך.
+                      הנוסחה
+                      הייחודית שלו המכילה חומצות פרי וויטמין C פעיל תורמת לפתרון בעיות מסוג זה. החומצה ההיאלורונית
+                      הכלולה
+                      בתרחיץ הטיפולי מסייעת ללחות את השכבה העליונה של העור ומגנה מפני ההשפעות האגרסיביות של חומצות. כבר
+                      לאחר
+                      ימי השימוש הרא...
+                    </p>
+                    <span class="date section-slide__date">
+                      אלכס סורבי 10.10.2022
+                    </span>
+                    <a href="" class="video-slide__btn btn section-slide__btn">
+                      קראו עוד
+                    </a>
+                  </div>
+                </div>
+                <!-- If we need pagination -->
+                <div class="swiper-pagination"></div>
+
+                <!-- If we need scrollbar -->
+                <div class="swiper-scrollbar"></div>
+
+              </div>
+              <button class="prev video-slide-prev section-slide-next"></button>
+              <button class="next video-slide-next section-slide-prev"></button>
+
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- news end -->
+
+    <!-- benefits -->
+    <section class="benefits section">
+      <div class="container">
+        <div class="benefits__wrapper">
+          <div class="benefits__top section__top">
+            <h3 class="benefits__title section__title">
+              יתרונות המוצרים
+            </h3>
+          </div>
+          <div class="benefits__content">
+            <p class="benefits__text">
+              תוך שימוש בניסיון ובטכנולוגיה העדכנית ביותר, מומחים ישראלים יצרו את המוצרים
+              הטבעיים המושלמים לשיערך
+            </p>
+
+            <ul class="benefits__list">
+              <li class="benefits__item open">
+                <img src="./img/benefits/ben-1.svg" alt="" class="benefits__img">
+                <div class="benefits__inner">
+                  <p class="benefit-text">
+                    מוצרים בטוחים לחלוטין, עומדים בתקני איכות בינלאומיים
+                  </p>
+                </div>
+              </li>
+              <li class="benefits__item">
+                <img src="./img/benefits/ben-2.svg" alt="" class="benefits__img">
+                <div class="benefits__inner">
+                  <p class="benefit-text">
+                    ליצירת מוצרי קוסמטיקה Dr. סורבי משתמש במרכיבים אורגניים
+                    מָקוֹר
+                  </p>
+                </div>
+              </li>
+              <li class="benefits__item">
+                <img src="./img/benefits/ben-3.svg" alt="" class="benefits__img">
+                <div class="benefits__inner">
+                  <p class="benefit-text">
+                    מתאים לנשים בהריון וילדים
+                  </p>
+                </div>
+              </li>
+              <li class="benefits__item">
+                <img src="./img/benefits/ben-4.svg" alt="" class="benefits__img">
+                <div class="benefits__inner">
+                  <p class="benefit-text">
+                    לא נוסה על בעלי חיים ואינו מכיל מרכיבים מהח
+                  </p>
+                </div>
+              </li>
+              <li class="benefits__item">
+                <img src="./img/benefits/ben-5.svg" alt="" class="benefits__img">
+                <div class="benefits__inner">
+                  <p class="benefit-text">
+                    כל הפורמולות והתכשירים מוגנים בפטנט
+                  </p>
+                </div>
+              </li>
+              <li class="benefits__item">
+                <img src="./img/benefits/ben-6.svg" alt="" class="benefits__img">
+                <div class="benefits__inner">
+                  <p class="benefit-text">
+                    הליכי טיפול ושיקום שיער מבוססים על Dr. סורבי מפגין יעילות גבוהה בפועל
+                  </p>
+                </div>
+              </li>
+              <li class="benefits__item">
+                <img src="./img/benefits/ben-7.svg" alt="" class="benefits__img">
+                <div class="benefits__inner">
+                  <p class="benefit-text">
+                    ניחוחות קלילים ונעימים בניסוחים של Dr. סורבי התאים לשתי הנשים ¬
+                    כך גם גברים
+                  </p>
+                </div>
+              </li>
+              <li class="benefits__item">
+                <img src="./img/benefits/ben-8.svg" alt="" class="benefits__img">
+                <div class="benefits__inner">
+                  <p class="benefit-text">
+                    אריזת פלסטיק חומה כהה מגנה על המרכיבים האורגניים של Dr. סורבי לקרני UV מזיקות
+                  </p>
+                </div>
+              </li>
+              <li class="benefits__item">
+                <img src="./img/benefits/ben-9.svg" alt="" class="benefits__img">
+                <div class="benefits__inner">
+                  <p class="benefit-text">
+                    מתקנים נוחים ועקביות עבה הופכים את הצריכה של מוצרים מבית Dr. סורבי חסכוני
+                  </p>
+                </div>
+              </li>
+              <li class="benefits__item">
+                <img src="./img/benefits/ben-10.svg" alt="" class="benefits__img">
+                <div class="benefits__inner">
+                  <p class="benefit-text">
+                    המוצר מעוצב ומיוצר בישראל!
+                  </p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- benefits end -->
+
+    <!-- sicrets -->
+    <section class="sicrets section">
+      <div class="container">
+        <div class="news__wrapper sicrets__wrapper">
+          <div class="sicrets__item">
+            <div class="sicrets__top section__top sicrets__top-mob">
+              <h3 class="sicrets__title section__title">
+                סודות מעצבי השיער
+              </h3>
+            </div>
+            <img src="./img/sicrets/s-bg.jpg" alt="">
+          </div>
+          <div class="sicrets__item">
+            <div class="sicrets__top section__top">
+              <h3 class="sicrets__title section__title">
+                סודות מעצבי השיער
+              </h3>
+              <a href="" class="sicrets__link section__link">
+                לכל המוצרים
+              </a>
+            </div>
+            <div class="sicret-item-mob">
+              <div class="swiper sicrets-swiper" id="about">
+                <!-- Additional required wrapper -->
+                <div class="sicrets__list swiper-wrapper nano-content">
+                  <!-- Slides -->
+                  <div class="sicrets__list-item swiper-slide">
+                    <p class="sicrets__list-title">
+                      מחקרי מעבדה של יעילות מוצרי ד"ר סורבי
+                    </p>
+                    <img src="./img/sicrets/s-1.jpg" alt="">
+                    <p class="sicrets__list-text">
+                      רצינו לא רק להרגיש אלא גם לראות מה קורה לשיער לאחר שימוש במוצרי ד"ר סורבי בשלבים שונים של השפעה
+                      לשיער. לשם כך ערכנו במעבדה מחקר מעמיק מיוחד בסיוע טכנולוגי של אוניברסיטת בן גוריון באר שבע.
+                      הופתענו מתוצאות הוויזואליות ובגאווה רבה נציג לכם אותן עכשיו.
+                    </p>
+                    <a href="" class="sicrets__list-btn btn">
+                      מידע נוסף
+                    </a>
+                  </div>
+                  <div class="sicrets__list-item swiper-slide">
+                    <p class="sicrets__list-title">
+                      מחקרי מעבדה של יעילות מוצרי ד"ר סורבי
+                    </p>
+                    <img src="./img/sicrets/s-2.jpg" alt="">
+                    <p class="sicrets__list-text">
+                      רצינו לא רק להרגיש אלא גם לראות מה קורה לשיער לאחר שימוש במוצרי ד"ר סורבי בשלבים שונים של השפעה
+                      לשיער. לשם כך ערכנו במעבדה מחקר מעמיק מיוחד בסיוע טכנולוגי של אוניברסיטת בן גוריון באר שבע.
+                      הופתענו מתוצאות הוויזואליות ובגאווה רבה נציג לכם אותן עכשיו.
+                    </p>
+                    <a href="" class="sicrets__list-btn btn">
+                      מידע נוסף
+                    </a>
+                  </div>
+                </div>
+                <!-- If we need pagination -->
+                <div class="swiper-pagination"></div>
+
+              </div>
+              <button class="prev sicrets-slide-prev section-slide-next"></button>
+              <button class="next sicrets-slide-next section-slide-prev"></button>
+            </div>
+            <div id="about" class="nano swiper">
+              <ul class="sicrets__list nano-content">
+                <li class="sicrets__list-item">
+                  <p class="sicrets__list-title">
+                    מחקרי מעבדה של יעילות מוצרי ד"ר סורבי
+                  </p>
+                  <img src="./img/sicrets/s-1.jpg" alt="">
+                  <p class="sicrets__list-text">
+                    רצינו לא רק להרגיש אלא גם לראות מה קורה לשיער לאחר שימוש במוצרי ד"ר סורבי בשלבים שונים של השפעה
+                    לשיער. לשם כך ערכנו במעבדה מחקר מעמיק מיוחד בסיוע טכנולוגי של אוניברסיטת בן גוריון באר שבע.
+                    הופתענו מתוצאות הוויזואליות ובגאווה רבה נציג לכם אותן עכשיו.
+                  </p>
+                  <a href="" class="sicrets__list-btn btn">
+                    מידע נוסף
+                  </a>
+                </li>
+                <li class="sicrets__list-item">
+                  <p class="sicrets__list-title">
+                    מחקרי מעבדה של יעילות מוצרי ד"ר סורבי
+                  </p>
+                  <img src="./img/sicrets/s-2.jpg" alt="">
+                  <p class="sicrets__list-text">
+                    רצינו לא רק להרגיש אלא גם לראות מה קורה לשיער לאחר שימוש במוצרי ד"ר סורבי בשלבים שונים של השפעה
+                    לשיער. לשם כך ערכנו במעבדה מחקר מעמיק מיוחד בסיוע טכנולוגי של אוניברסיטת בן גוריון באר שבע.
+                    הופתענו מתוצאות הוויזואליות ובגאווה רבה נציג לכם אותן עכשיו.
+                  </p>
+                  <a href="" class="sicrets__list-btn btn">
+                    מידע נוסף
+                  </a>
+                </li>
+              </ul>
             </div>
           </div>
         </div>
       </div>
     </section>
-    <!-- banner end -->
+    <!-- sicrets end -->
+
+    <!-- reviews -->
+    <section class="reviews section">
+      <div class="container">
+        <div class="reviews__wrapper">
+          <div class="reviews__item">
+            <div class="container container-reviews">
+              <div class="reviews__top section__top">
+                <h3 class="reviews__title section__title">
+                  חוות דעת של הלקוחות שלנו
+                </h3>
+              </div>
+              <div class="swiper reviews-swiper">
+                <!-- Additional required wrapper -->
+                <div class="swiper-wrapper reviews-swiper__wrapper">
+                  <!-- Slides -->
+                  <div class="swiper-slide reviews-slide">
+                    <div class="reviews-slide__top">
+                      <div class="reviews-slide__btns">
+                        <button class="reviews-slide-prev"></button>
+                        <span>1</span>
+                        <button class="reviews-slide-next"></button>
+                      </div>
+                      <div class="reviews-slide__stars">
+                        <img src="./img/reviews/star.svg" alt="">
+                        <img src="./img/reviews/star.svg" alt="">
+                        <img src="./img/reviews/star.svg" alt="">
+                        <img src="./img/reviews/star.svg" alt="">
+                        <img src="./img/reviews/star.svg" alt="">
+                      </div>
+                    </div>
+                    <p class="reviews-slide__text">
+                      כדי שהוא יהיה חלק ואחיד ללא קרם בסיס ,התאים חייבים להתחדש באופן קבוע ומהיר. ככל שאנו מתבגרים
+                      התהליך הזה אורך זמן רב יותר. חומצות, הן הפתרון האידיאלי לבעיות רבות. מדלקת ועד קמטים. הן עוזרות
+                      להילחם באקנה, פיגמנטציה ובנקבוביות מוגדלות. התרחיץ הטיפולי Active renewal lotion הינו הדבר
+                      האולטימטיבי לכך. הנוסחה הייחודית שלו המכילה חומצות פרי וויטמין C פעיל תורמת לפתרון בעיות מסוג זה.
+                      החומצה ההיאלורונית הכלולה בתרחיץ הטיפולי מסייעת ללחות את השכבה העליונה של העור ומגנה מפני ההשפעות
+                      האגרסיביות של חומצות. כבר לאחר ימי השימוש הראשונים ניתן להבחין בהשפעה על טוהר העור, מבנה העור,
+                      הברק והאחידות שלו.
+                    </p>
+                  </div>
+                  <div class="swiper-slide reviews-slide">
+                    <div class="reviews-slide__top">
+                      <div class="reviews-slide__btns">
+                        <button class="reviews-slide-prev"></button>
+                        <span>1</span>
+                        <button class="reviews-slide-next"></button>
+                      </div>
+                      <div class="reviews-slide__stars">
+                        <img src="./img/reviews/star.svg" alt="">
+                        <img src="./img/reviews/star.svg" alt="">
+                        <img src="./img/reviews/star.svg" alt="">
+                        <img src="./img/reviews/star.svg" alt="">
+                        <img src="./img/reviews/star.svg" alt="">
+                      </div>
+                    </div>
+                    <p class="reviews-slide__text">
+                      כדי שהוא יהיה חלק ואחיד ללא קרם בסיס ,התאים חייבים להתחדש באופן קבוע ומהיר. ככל שאנו מתבגרים
+                      התהליך הזה אורך זמן רב יותר. חומצות, הן הפתרון האידיאלי לבעיות רבות. מדלקת ועד קמטים. הן עוזרות
+                      להילחם באקנה, פיגמנטציה ובנקבוביות מוגדלות. התרחיץ הטיפולי Active renewal lotion הינו הדבר
+                      האולטימטיבי לכך. הנוסחה הייחודית שלו המכילה חומצות פרי וויטמין C פעיל תורמת לפתרון בעיות מסוג זה.
+                      החומצה ההיאלורונית הכלולה בתרחיץ הטיפולי מסייעת ללחות את השכבה העליונה של העור ומגנה מפני ההשפעות
+                      האגרסיביות של חומצות. כבר לאחר ימי השימוש הראשונים ניתן להבחין בהשפעה על טוהר העור, מבנה העור,
+                      הברק והאחידות שלו.
+                    </p>
+                  </div>
+                </div>
+                <!-- If we need pagination -->
+                <div class="swiper-pagination"></div>
+                <!-- If we need scrollbar -->
+                <div class="swiper-scrollbar"></div>
+              </div>
+            </div>
+          </div>
+          <button class="prev reviews-slide-next"></button>
+          <button class="next reviews-slide-prev"></button>
+        </div>
+      </div>
+    </section>
+    <!-- reviews end -->
+
+    <!-- consultation -->
+    <section class="consultation section">
+      <div class="container">
+        <div class="consultation__wrapper sicrets__wrapper">
+          <div class="consultation__item">
+            <div class="form">
+              <h3 class="form__title">
+                השאירי פרטים לקבלת ייעוץ
+              </h3>
+              <form action="" class="form-box">
+                <div class="input__wrapper">
+                  <div class="input__inner">
+                    <label for="" class="form__label">שם פרטי</label>
+                    <input type="text" name="" class="form__input" id="" placeholder="ילנה">
+                  </div>
+                  <div class="input__inner">
+                    <label for="" class="form__label">שם משפחה</label>
+                    <input type="text" name="" class="form__input" id="" placeholder="קרסבינה">
+                  </div>
+                </div>
+                <div class="input__wrapper">
+                  <div class="input__inner">
+                    <label for="" class="form__label">מדינה</label>
+                    <input type="text" name="" class="form__input" id="" placeholder="ישראל">
+                  </div>
+                  <div class="input__inner">
+                    <label for="" class="form__label">עיר</label>
+                    <input type="text" name="" class="form__input" id="" placeholder="תל-אביב">
+                  </div>
+                </div>
+                <div class="input__wrapper">
+                  <div class="input__inner">
+                    <label for="" class="form__label">דואר אלקטרוני</label>
+                    <input type="text" name="" class="form__input" id="" placeholder="info@gmail.com">
+                  </div>
+                  <div class="input__inner">
+                    <label for="" class="form__label">טלפון ליצירת קשר </label>
+                    <input type="text" name="" class="form__input" id="" placeholder="+92-355-655-75">
+                  </div>
+                </div>
+                <button class="form__btn btn" type="submit">
+                  שלחו פנייה
+                </button>
+              </form>
+            </div>
+
+          </div>
+          <div class="consultation__item">
+            <img src="./img/consultation/cons-bg.jpg" alt="">
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- consultation end -->
+
+    <!-- social -->
+    <section class="social section">
+      <div class="social__wrapper">
+        <h3 class="social__title section__title-noborder">
+          הלקוחות שלנו ברשתות החברתיות
+        </h3>
+        <div class="social__img-wrapper">
+          <a href="" class="social__img-link" target="_blank" rel="noopener nofollow">
+            <img src="./img/social/si-1.jpg" alt="" class="social__img">
+          </a>
+          <a href="" class="social__img-link" target="_blank" rel="noopener nofollow">
+            <img src="./img/social/si-2.jpg" alt="" class="social__img">
+          </a>
+          <a href="" class="social__img-link" target="_blank" rel="noopener nofollow">
+            <img src="./img/social/si-3.jpg" alt="" class="social__img">
+          </a>
+          <a href="" class="social__img-link" target="_blank" rel="noopener nofollow">
+            <img src="./img/social/si-4.jpg" alt="" class="social__img">
+          </a>
+        </div>
+        <ul class="social__list">
+          <li class="social__item">
+            <a href="" class="social__link">
+              <img src="./img/social/face.svg" alt="">
+              <span>עקבי</span>
+            </a>
+          </li>
+          <li class="social__item">
+            <a href="" class="social__link">
+              <img src="./img/social/twit.svg" alt="">
+              <span>עקבי</span>
+            </a>
+          </li>
+          <li class="social__item">
+            <a href="" class="social__link">
+              <img src="./img/social/ins.svg" alt="">
+              <span>עקבי</span>
+            </a>
+          </li>
+          <li class="social__item">
+            <a href="" class="social__link">
+              <img src="./img/social/telegram.svg" alt="">
+              <span>עקבי</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </section>
+    <!-- social end -->
+
+    <!-- subscribe -->
+    <section class="subscribe section">
+      <div class="container">
+        <div class="subscribe__wrapper">
+          <h3 class="subscribe__title section__title-noborder">
+            הלקוחות שלנו ברשתות החברתיות
+          </h3>
+          <div class="subscribe__form-box">
+            <form action="" class="subscribe__form">
+              <div class="subscribe__form-inner">
+                <label for="" class="subscribe__form-label">הינך בעלת מקצוע?</label>
+                <input type="checkbox" name="" class="" id="">
+              </div>
+              <input type="text" name="" class="subscribe__form-input" id="" placeholder="דואר אלקטרוני">
+              <p class="subscribe__form-text">
+                בשליחת הפרטים, הינך מסכימה עם <a href="">מדיניות הפרטיות שלנו</a>
+              </p>
+              <button class="subscribe__form-btn btn" type="submit">
+                שלחו
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- subscribe end -->
   </main>
 
-  <script src="js/code.jquery.com_jquery-3.7.0.min.js"></script>
-  <script src="/slick/slick.min.js"></script>
-  <script src="js/main.js"></script>
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__wrapper">
+        <div class="footer__top">
+          <div class="footer__item">
+            <div class="footer__menu-acc menu-acc">
+              <div class="menu-acc__accordion ">
+                <p class="menu-acc__title footer__title">חנות</p>
+                <ul class="menu-acc__list footer__menu">
+                  <li class="menu-acc__item footer__menu-item">
+                    <a href="" class="menu-acc__link footer__menu-link">
+                      טיפוח פנים
+                    </a>
+                  </li>
+                  <li class="menu-acc__item footer__menu-item">
+                    <a href="" class="menu-acc__link footer__menu-link">
+                      טיפוח שיער
+                    </a>
+                  </li>
+                  <li class="menu-acc__item footer__menu-item">
+                    <a href="" class="menu-acc__link footer__menu-link">
+                      טריכולוגיה
+                    </a>
+                  </li>
+                  <li class="menu-acc__item footer__menu-item">
+                    <a href="" class="menu-acc__link footer__menu-link">
+                      מיני קיטים
+                    </a>
+                  </li>
+                  <li class="menu-acc__item footer__menu-item">
+                    <a href="" class="menu-acc__link footer__menu-link">
+                      בקשת ייעוץ
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <div class="menu-acc__accordion ">
+                <p class="menu-acc__title footer__title">עזרה</p>
+                <ul class="menu-acc__list footer__menu">
+                  <li class="menu-acc__item footer__menu-item">
+                    <a href="" class="menu-acc__link footer__menu-link">
+                      חשבון שלי
+                    </a>
+                  </li>
+                  <li class="menu-acc__item footer__menu-item">
+                    <a href="" class="menu-acc__link footer__menu-link">
+                      צרו קשר
+                    </a>
+                  </li>
+                  <li class="menu-acc__item footer__menu-item">
+                    <a href="" class="menu-acc__link footer__menu-link">
+                      שאלות נפוצות
+                    </a>
+                  </li>
+                  <li class="menu-acc__item footer__menu-item">
+                    <a href="" class="menu-acc__link footer__menu-link">
+                      חיפוש סלון קרוב
+                    </a>
+                  </li>
+                  <li class="menu-acc__item footer__menu-item">
+                    <a href="" class="menu-acc__link footer__menu-link">
+                      שיתוף פעולה
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <div class="menu-acc__accordion ">
+                <p class="menu-acc__title footer__title">אודותינו</p>
+                <ul class="menu-acc__list footer__menu">
+                  <li class="menu-acc__item footer__menu-item">
+                    <a href="" class="menu-acc__link footer__menu-link">
+                      סיפור שלנו
+                    </a>
+                  </li>
+                  <li class="menu-acc__item footer__menu-item">
+                    <a href="" class="menu-acc__link footer__menu-link">
+                      בלוג
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="footer__item">
+            <p class="footer__title">
+              מחוייבות שלנו
+            </p>
+            <ul class="footer__menu footer__menu">
+              <li class="footer__menu-item">
+                <a href="" class="footer__menu-link" target="_blank" rel="noopener nofollow">
+                  <span>דואר אלאקטרוני</span>
+                  <img src="./img/footer/icon/connection/c-1.svg" alt="">
+                </a>
+              </li>
+              <li class="footer__menu-item">
+                <a href="" class="footer__menu-link" target="_blank" rel="noopener nofollow">
+                  <span>טלפון</span>
+                  <img src="./img/footer/icon/connection/c-3.svg" alt="">
+                </a>
+              </li>
+              <li class="footer__menu-item">
+                <a href="" class="footer__menu-link" target="_blank" rel="noopener nofollow">
+                  <span>ווטס אפ</span>
+                  <img src="./img/footer/icon/connection/c-4.svg" alt="">
+                </a>
+              </li>
+              <li class="footer__menu-item">
+                <a href="" class="footer__menu-link" target="_blank" rel="noopener nofollow">
+                  <span>כתובת</span>
+                  <img src="./img/footer/icon/connection/c-5.svg" alt="">
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="footer__item">
+            <p class="footer__title">
+              חפשו אותנו
+            </p>
+            <ul class="footer__menu footer__menu">
+              <li class="footer__menu-item">
+                <a href="" class="footer__menu-link footer__link" target="_blank" rel="noopener nofollow">
+                  <span>Facebook</span>
+                  <img src="./img/footer/icon/social/s-1.svg" alt="">
+                </a>
+              </li>
+              <li class="footer__menu-item">
+                <a href="" class="footer__menu-link footer__link" target="_blank" rel="noopener nofollow">
+                  <span>Twitter</span>
+                  <img src="./img/footer/icon/social/s-2.svg" alt="">
+                </a>
+              </li>
+              <li class="footer__menu-item">
+                <a href="" class="footer__menu-link footer__link" target="_blank" rel="noopener nofollow">
+                  <span>Telegram</span>
+                  <img src="./img/footer/icon/social/s-3.svg" alt="">
+                </a>
+              </li>
+              <li class="footer__menu-item">
+                <a href="" class="footer__menu-link footer__link" target="_blank" rel="noopener nofollow">
+                  <span>Instagram</span>
+                  <img src="./img/footer/icon/social/s-4.svg" alt="">
+                </a>
+              </li>
+              <li class="footer__menu-item">
+                <a href="" class="footer__menu-link footer__link" target="_blank" rel="noopener nofollow">
+                  <span>YouTube</span>
+                  <img src="./img/footer/icon/social/s-5.svg" alt="">
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="footer__item">
+            <div class="footer__label">
+              <p class="footer__title">
+                מחוייבות שלנו
+              </p>
+              <ul class="footer__menu-icon menu-icon">
+                <li class="menu-icon__item">
+                  <a href="" class="menu-icon__link" target="_blank" rel="noopener nofollow">
+                    <img src="./img/footer/icon/i-4.svg" alt="">
+                  </a>
+                </li>
+                <li class="menu-icon__item">
+                  <a href="" class="menu-icon__link" target="_blank" rel="noopener nofollow">
+                    <img src="./img/footer/icon/i-3.svg" alt="">
+                  </a>
+                </li>
+                <li class="menu-icon__item">
+                  <a href="" class="menu-icon__link" target="_blank" rel="noopener nofollow">
+                    <img src="./img/footer/icon/i-2.svg" alt="">
+                  </a>
+                </li>
+                <li class="menu-icon__item">
+                  <a href="" class="menu-icon__link" target="_blank" rel="noopener nofollow">
+                    <img src="./img/footer/icon/i-1.svg" alt="">
+                  </a>
+                </li>
+              </ul>
+              <div class="icon-logo">
+                <a href="" class="icon-logo__link" target="_blank" rel="noopener nofollow">
+                  <img src="./img/footer/icon/long-icon.png" alt="">
+                </a>
+              </div>
+              <ul class="menu-btns">
+                <li class="menu-btns__item">
+                  <a href="#body" class="menu-btns__link" target="_blank" rel="noopener nofollow">
+                    <img src="./img/footer/Icon-arrow.svg" alt="">
+                  </a>
+                </li>
+                <li class="menu-btns__item">
+                  <a href="" class="menu-btns__link" target="_blank" rel="noopener nofollow">
+                    <img src="./img/footer/icon-messege.svg" alt="">
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="footer__bottom">
+          <div class="footer__text">
+            <a href="https://enter2web.co.il/" target=”_blank” rel=”noopener nofollow”>
+              <img src="./img/footer/red_logo 1.png" class="footer__bottom-logo" alt="">
+            </a>
+            <div class="footer__text-box">
+              <p>
+                powered by
+              </p>
+            </div>
+            <div class="footer__text-box">
+              <p>
+                Made with
+              </p>
+              <img src="./img/footer/Icon-favorite.png" alt="">
+              <p>
+                in Israel
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="./js/code.jquery.com_jquery-3.7.0.min.js"></script>
+  <script src="./js/cdnjs.cloudflare.com_ajax_libs_Swiper_6.8.4_swiper-bundle.min.js"></script>
+  <script src="./js/jquery.nanoscroller.min.js"></script>
+  <script src="./js/cdn.tailwindcss.com_3.3.2"></script>
+  <script src="./js/main.js"></script>
 </body>
 
 </html>

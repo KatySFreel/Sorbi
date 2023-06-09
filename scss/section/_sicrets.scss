@@ -1,0 +1,198 @@
+.sicrets {
+	.container-sicrets {
+		margin: 0;
+		margin-right: auto;
+		max-width: 880px;
+	}
+
+	&__wrapper {
+		display: flex;
+		width: 100%;
+		align-items: stretch;
+		height: 100%;
+		background: none;
+		// overflow: hidden;
+		@include breakpoint (sm) {
+			flex-direction: column;
+		}
+	}
+
+	&__top {
+		margin-bottom: 15px;
+	}
+
+	&__item {
+		width: 50%;
+		@include breakpoint (md) {
+			width: 100%;
+			height: auto;
+		}
+
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+
+		.sicret-item-mob {
+			display: none;
+		}
+
+		&:nth-child(2) {
+			margin: 80px 80px 80px 0px;
+			overflow-y: hidden;
+			@include breakpoint(xlg) {
+				margin: 0px 20px 0px 0px;
+			}
+			@include breakpoint (sm) {
+				margin: 0px;
+				padding: 0px;
+				.sicrets__top, .nano {
+					display: none;
+				}
+				.sicret-item-mob {
+					display: block;
+				}
+			}
+		}
+
+		.sicrets__top-mob {
+			display: none;
+		}
+
+
+		&:nth-child(1) {
+			@include breakpoint (sm) {
+				width: calc(100% + 30px);
+				margin-right: -15px;
+
+				 img {
+					width: 100%;
+					-o-object-fit: contain;
+					object-fit: contain;
+			  }
+
+				.sicrets__top-mob {
+					display: block;
+				}
+			}
+		}
+	}
+
+	&__list {
+
+		img {
+			width: 100%;
+			height: auto;
+			margin-bottom: 24px;
+			object-fit: contain;
+			@include breakpoint(lg) {
+				margin-bottom: 16px;
+			}
+		}
+	}
+
+	&__list-text {
+		@include breakpoint(lg) {
+			font-size: 12px;
+			line-height: 16px;
+		}
+	}
+
+	&__list-item {
+		margin-bottom: 60px;
+	}
+
+	&__list-title {
+		@include title;
+		display: block;
+		margin-bottom: 24px;
+		@include breakpoint(lg) {
+			margin-bottom: 16px;
+			margin-top: 32px;
+			font-size: 12px;
+			line-height: 20px;
+		}
+		@include breakpoint(lg) {
+			margin-bottom: 16px;
+			margin-top: 20px;
+			font-size: 12px;
+			line-height: 20px;
+		}
+	}
+
+	&__list-btn {
+		@include btn-inner-slide;
+		max-width: 230px;
+		margin-top: 24px;
+		padding: 11px 0px;
+		margin-right: auto;
+		&::before {
+			position: absolute;
+			left: 36px;
+			transition: $transform;
+		}
+
+		&:hover::before {
+			left: 26px;
+			transition: $transform;
+		}
+
+		@include breakpoint(lg) {
+			font-size: 12px;
+			line-height: 16px;
+			padding: 8px;
+			max-width: 165px;
+			&::before {
+				left: 15px;
+				width: 16px;
+				height: 16px;
+				-o-object-fit: contain;
+				object-fit: contain;
+				background-repeat: no-repeat;
+				background-position: center center;
+				background-size: contain;
+			}
+		}
+	}
+
+	.prev, .next {
+		top: 62%;
+	}
+}
+
+
+.nano {
+	background: $bg-light;
+	width: 100%;
+	margin-top: 42px;
+	@include breakpoint(xlg) {
+		margin-top: 11px;
+	}
+	@include breakpoint(md) {
+		margin-top: 22px;
+	}
+}
+
+.nano-content {
+	right: 0;
+	left: 0;
+	padding-left: 40px;
+}
+
+.nano .nano-pane {
+	background: $face-2;
+	width: 5px;
+	cursor: pointer;
+}
+
+.nano > .nano-pane > .nano-slider {
+	background: $dark-grey;
+	padding: 0;
+	margin: 0;
+}
+
+.nano > .nano-pane {
+	right: auto;
+	left: 0;
+}

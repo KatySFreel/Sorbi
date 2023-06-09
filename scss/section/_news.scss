@@ -1,0 +1,117 @@
+.news {
+	.section__top {
+		padding-bottom: 11%;
+
+		@include breakpoint (xxx) {
+			padding: 0;
+			margin-bottom: 32px;
+		}
+	}
+	.swiper {
+		width: 100%;
+		max-width: 800px;
+		height: 100%;
+	}
+
+	.news-slide {
+		&__top {
+			opacity: 0.7;
+
+			@include breakpoint(md) {
+				opacity: 1;
+			}
+		}
+
+		&__btns {
+			opacity: 0.7;
+
+			@include breakpoint(md) {
+				opacity: 1;
+			}
+		}
+
+		.prev,
+		.next {
+			position: static;
+			display: block;
+		}
+
+		&__btn {
+			opacity: 0.5;
+
+			@include breakpoint(md) {
+				opacity: 1;
+			}
+		}
+	}
+
+	@media (max-width: 1200px) {
+		.swiper-scrollbar {
+			display: none;
+		}
+	}
+
+	.swiper-pagination {
+		@include breakpoint(xlg) {
+			margin-top: 0;
+		}
+		@include breakpoint(md) {
+			margin-top: 20px;
+		}
+	}
+
+	.prev,
+	.next {
+		opacity: 0;
+		@include breakpoint(md) {
+			top: 50%;
+			opacity: 1;
+		}
+	}
+}
+
+.video {
+	@include breakpoint(md) {
+		margin-top: 48px;
+	}
+
+	.container-video {
+		margin-right: 0;
+		margin-left: auto;
+	}
+
+	.video-slide {
+		&__top {
+			opacity: 1;
+		}
+
+		&__title {
+			opacity: 1;
+		}
+
+		.prev,
+		.next {
+			position: static;
+			display: block;
+		}
+
+		&__btn {
+			padding-left: 47px;
+
+			&::before {
+				content: "";
+				background-image: url('../img/news/video-arrow.svg');
+				background-repeat: no-repeat;
+				background-position: center center;
+				background-size: contain;
+				left: 36px;
+				transition: $transform;
+			}
+
+			&:hover::before {
+				left: 26px;
+				transition: $transform;
+			}
+		}
+	}
+}
