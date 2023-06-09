@@ -3411,7 +3411,7 @@ body {
   color: #FFFFFF;
   display: inline-block;
   position: relative;
-  display: flex;
+  display: inline-flex;
   align-items: center;
   white-space: nowrap;
 }
