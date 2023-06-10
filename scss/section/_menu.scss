@@ -25,6 +25,7 @@
 	justify-content: center;
 	flex-direction: column;
 	gap: 8px;
+
 	@include breakpoint(lg) {
 		margin-top: 24px;
 		gap: 16px;
@@ -37,14 +38,17 @@
 	font-size: 56px;
 	line-height: 70px;
 	position: relative;
+	color: $bg-dark;
 	@include breakpoint(lg) {
 		font-size: 30px;
 		line-height: 34px;
 	}
+
 	@include breakpoint(md) {
 		font-size: 20px;
 		line-height: 24px;
 	}
+
 	&::after {
 		position: absolute;
 		content: '';
@@ -65,6 +69,7 @@
 .header-menu-bottom {
 	border-top: 1px solid $bg-dark;
 	padding: 48px 0px 80px;
+
 	@include breakpoint(lg) {
 		padding: 24px 0px 56px;
 	}
@@ -73,6 +78,7 @@
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
+
 		@include breakpoint(xlg) {
 			justify-content: center;
 		}
@@ -97,7 +103,7 @@
 .header-menu-burger.active {
 	display: block;
 	opacity: 1;
-	z-index: 200;
+	z-index: 203;
 	height: calc(100vh - 67px);
 	overflow-y: auto;
 	transform: translateX(0%);
@@ -107,13 +113,14 @@
 		@include breakpoint(lg) {
 			width: 100%;
 			max-width: 80%;
- 		}
+		}
+
 		&:hover {
 			opacity: 0.6;
 			transition: opacity .3s ease;
 		}
 	}
-	
+
 
 	.header__menu {
 		display: none;
@@ -149,9 +156,11 @@
 		display: none;
 		width: 100%;
 		margin-top: 24px;
+
 		@media (max-width: 1170px) {
 			display: block;
 		}
+
 		&__form {
 			position: relative;
 		}
@@ -161,13 +170,28 @@
 			background-color: transparent;
 			direction: rtl;
 			padding-bottom: 16px;
+			transition: $transform;
 			border-bottom: 1px solid $bg-dark;
+
+			&:focus {
+				box-shadow: none;
+				border-bottom: 1px solid $primary-1;
+				transition: $transform;
+			}
 		}
 
 		&__btn {
 			position: absolute;
 			left: 10px;
+			background: none;
 			top: 0;
 		}
+	}
+
+	select {
+		font-weight: 400;
+		font-size: 16px;
+		line-height: 24px;
+		color: #939292;
 	}
 }

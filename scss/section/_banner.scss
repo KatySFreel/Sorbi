@@ -1,12 +1,13 @@
 .banner {
 
 	&__wrapper {
-		display: flex;
-		align-items: center;
-		align-content: center;
+		display: grid;
+		grid-template-columns: repeat(2,1fr);
 		gap: 24px;
-		@include breakpoint (xxx) {
-			flex-direction: column-reverse;
+		@include breakpoint (xlg) {
+			display: flex;
+			flex-direction: column;
+			gap: 32px;
 		}
 	}
 
@@ -16,26 +17,60 @@
 		display: block;
 		position: relative;
 		overflow: hidden;
-		@include breakpoint(xlg) {
+		background-position: center left -0px;
+		background-repeat: no-repeat;
+		background-size: cover;
+		@media (max-width: 1400px) {
 			height: 290px;
 		}
+		@include breakpoint (xlg) {
+			height: 430px;
+		}
+		@include breakpoint (md) {
+			height: 390px;
+		}
+		@include breakpoint (sm) {
+			height: 280px;
+		}
 		@include breakpoint (xs) {
-			height: 230px;
+			height: 220px;
+		}
+		@include breakpoint (xxs) {
+			height: 180px;
 		}
 
 
 		&:nth-child(1) {
+			background-image: url("./../img/banner/banner2.jpg");
 			.banner__title,
 			.banner__text {
 				color: #FFFFFF;
-				@include breakpoint(xlg) {
-					max-width: 100%;
+				@media (max-width: 1400px) {
+					max-width: 130px;
 				}
 				span {
 					font-family: 'Montserrat';
 					display: block;
+					text-transform: uppercase;
+					@include breakpoint(sm) {
+						display: inline;
+					}
 				}
 			}
+		}
+
+		&:nth-child(2) {
+			background-image: url("./../img/banner/banner1.jpg");
+		}
+
+		@media (max-width: 1400px) {
+			background-position: center left 0px;
+		}
+		@include breakpoint(xxx) {
+			background-position: center left -53px;
+		}
+		@include breakpoint(xlg) {
+			background-position: center left 0px;
 		}
 
 	}
@@ -47,28 +82,24 @@
 		overflow: hidden;
 		transition: 1s;
 		position: relative;
-		&:hover img {
-			transform: scale(1.1);
-		}
-
-		img {
-			position: absolute;
-			left: 0;
-			right: 0;
-			top: 0;
-			bottom: 0;
-			width: 100%;
-			height: 100%;
-			object-fit: cover;
-			object-position: left;
-			transition: 1s;
-			z-index: -1;
+		&:hover {
+			background-position: center left 10px;
+			transition: all .4s ease;
+			@include breakpoint(xxx) {
+				background-position: center left 10px;
+			}
 		}
 	}
 
 	&__content {
 		padding-right: 64px;
 		margin-top: auto;
+		@include breakpoint(xlg) {
+			padding-right: 34px;
+		}
+		@include breakpoint(md) {
+			padding-right: 24px;
+		}
 	}
 
 	&__title {
@@ -80,10 +111,26 @@
 		margin-bottom: 26px;
 		width: 100%;
 		max-width: 330px;
-		@include breakpoint(lg) {
-			font-weight: 600;
+		@media (max-width: 1400px) {
+			font-size: 34px;
+			line-height: 36px;
+		}
+		@include breakpoint(xxx) {
 			font-size: 24px;
 			line-height: 26px;
+		}
+		@include breakpoint(xlg) {
+			font-size: 56px;
+			line-height: 70px;
+		}
+		@include breakpoint(md) {
+			font-size: 34px;
+			line-height: 36px;
+		}
+		@include breakpoint(sm) {
+			font-size: 24px;
+			line-height: 26px;
+			margin-bottom: 4px;
 		}
 	}
 
@@ -93,8 +140,7 @@
 		line-height: 60px;
 		text-align: right;
 		color: #000000;
-		@include breakpoint(lg) {
-			font-weight: 400;
+		@media (max-width: 1400px) {
 			font-size: 16px;
 			line-height: 23px;
 		}
@@ -109,29 +155,48 @@
 		flex-direction: column;
 		color: $bg-light;
 		margin-top: auto;
-		@include breakpoint (lg) {
+		@media (max-width: 1400px) {
+			width: 257px;
+			padding: 7px 24px;
+		}
+		@include breakpoint (xlg) {
+			width: 250px;
+		}
+		@include breakpoint (md) {
 			width: 157px;
 			padding: 7px 24px;
 		}
 
 		span {
 			&:nth-child(1) {
-				font-weight: 600;
 				font-size: 20px;
 				line-height: 35px;
-				@include breakpoint (lg) {
-					font-weight: 600;
+				@include breakpoint (xxx) {
+					font-size: 12px;
+					line-height: 13px;
+				}
+				@include breakpoint (xlg) {
+					font-size: 20px;
+					line-height: 35px;
+				}
+				@include breakpoint (sm) {
 					font-size: 12px;
 					line-height: 13px;
 				}
 			}
 
 			&:nth-child(2) {
-				font-weight: 400;
 				font-size: 16px;
 				line-height: 24px;
-				@include breakpoint (lg) {
-					font-weight: 400;
+				@include breakpoint (xxx) {
+					font-size: 10px;
+					line-height: 9px;
+				}
+				@include breakpoint (xlg) {
+					font-size: 16px;
+					line-height: 24px;
+				}
+				@include breakpoint (md) {
 					font-size: 10px;
 					line-height: 9px;
 				}

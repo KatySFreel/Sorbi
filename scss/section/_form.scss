@@ -1,58 +1,28 @@
-.consultation {
-	padding: 80px 0px;
-	margin: 0;
-	background: $light-grey;
-
-	&__wrapper {
-		overflow: inherit;
-		@include breakpoint(lg) {
-			flex-direction: column-reverse;
-		}
-	}
-
-	&__item {
-		width: 50%;
-		margin: 0 auto;
-		&:nth-child(2) {
-			img {
-				width: 868px;
-				@include breakpoint(lg) {
-					width: 100%;
-					object-fit: contain;
-				}
-			}
-			@include breakpoint(lg) {
-				width: 100%;
-				width: calc(100% + 30px);
-				margin-right: -15px;
-			}
-		}
-		&:nth-child(1) {
-			padding-left: 80px;
-			@include breakpoint(lg) {
-				padding-left: 0px;
-				width: 100%;
-			}
-		}
-	}
-}
-
 .form {
 	width: 100%;
 	max-width: 720px;
 	margin-left: auto;
+
 	@include breakpoint(lg) {
 		margin: 0 auto;
+		max-width: 380px;
 	}
 
 	&__title {
 		@include h3;
 		margin-bottom: 80px;
 		text-align: center;
+
+		@include breakpoint(xxx) {
+			font-weight: 400;
+			font-size: 30px;
+			line-height: 32px;
+			margin-bottom: 35px;
+		}
+
 		@include breakpoint(lg) {
 			font-weight: 400;
 			font-size: 24px;
-			line-height: 32px;
 			margin-bottom: 28px;
 			margin-top: 24px;
 		}
@@ -73,18 +43,28 @@
 		max-width: 348px;
 		box-sizing: border-box;
 		background: $light-grey;
+
 		&::placeholder {
 			@include title;
 			font-family: 'Assistant';
 			background: $light-grey;
 			color: #AEAEAE;
-			@include breakpoint(lg) {
+
+			@include breakpoint(xxx) {
 				font-weight: 400;
 				font-size: 20px;
 				line-height: 24px;
 			}
 		}
-		@include breakpoint(lg) {
+
+		&[name="tel"] {
+			padding-right: 40px;
+		}
+		&[name="email"] {
+			padding-right: 40px;
+		}
+
+		@include breakpoint(xxx) {
 			max-width: 100%;
 			padding: 8px 16px;
 		}
@@ -100,20 +80,37 @@
 		@include h5SemiBold;
 	}
 }
+
 .input {
 
 	&__wrapper {
 		display: flex;
 		gap: 24px;
 		margin-bottom: 40px;
+
+		@include breakpoint(xxx) {
+			margin-bottom: 24px;
+		}
+
 		@include breakpoint(lg) {
 			flex-direction: column;
-			margin-bottom: 24px;
 		}
 	}
 
 	&__inner {
 		display: block;
 		width: 100%;
+	}
+
+	&__content {
+		display: flex;
+		align-items: center;
+		flex-direction: row-reverse;
+		position: relative;
+
+		img {
+			position: absolute;
+			right: 8px;
+		}
 	}
 }

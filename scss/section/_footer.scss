@@ -14,23 +14,17 @@
 				"d c b a"
 				"d c b a";
 
-		@include breakpoint(xxx) {
-			grid-template-areas:
-				"d d d d"
-				"c c b a"
-				"c c b a";
+				@media (max-width: 1400px) {
+					grid-template-areas:
+					"d d d d"
+					"c c c c"
+					"b b b b"
+					"a a a a";
+			}
 		}
-		@include breakpoint(lg) {
-			grid-template-areas:
-				"d d d d"
-				"c c c c"
-				"b b b b"
-				"a a a a";
-		}
-	}
 
 	&__item {
-		@include breakpoint(lg){
+		@media (max-width: 1400px){
 			padding: 24px 0px 40px;
 			display: flex;
 			flex-direction: column;
@@ -38,7 +32,7 @@
 		}
 		&:nth-child(1) {
 			grid-area: d;
-			@include breakpoint (lg) {
+			@media (max-width: 1400px) {
 				border-bottom: 1px solid $light-grey;
 				justify-content: space-between;
 				padding: 0;
@@ -47,21 +41,23 @@
 
 		&:nth-child(2) {
 			grid-area: c;
-			@include breakpoint (lg) {
+			@media (max-width: 1400px) {
 				border-bottom: 1px solid $light-grey;
+				text-align: left;
 			}
 		}
 
 		&:nth-child(3) {
 			grid-area: b;
-			@include breakpoint (lg) {
+			@media (max-width: 1400px) {
 				border-bottom: 1px solid $light-grey;
+				text-align: left;
 			}
 		}
 
 		&:nth-child(4) {
 			grid-area: a;
-			@include breakpoint (lg) {
+			@media (max-width: 1400px) {
 				padding: 24px 0px 40px;
 				text-align: center;
 			}
@@ -69,7 +65,7 @@
 	}
 
 	&__menu {
-		@include breakpoint(lg) {
+		@media (max-width: 1400px) {
 			display: flex;
 			flex-direction: row-reverse;
 			gap: 48px;
@@ -78,8 +74,8 @@
 
 	&__menu-acc {
 		display: grid;
-		grid-template-columns: repeat(3, 1fr);
-		@include breakpoint(lg) {
+		grid-template-columns: repeat(3, 196px);
+		@media (max-width: 1400px) {
 			display: flex;
 			flex-direction: column;
 		}
@@ -88,14 +84,14 @@
 	&__title {
 		color: $bg-light;
 		@include title;
-		@include breakpoint(lg) {
+		@media (max-width: 1400px) {
 			margin-bottom: 16px;
 		}
 	}
 
 	&__menu-item {
 		margin: 10px 0px;
-		@include breakpoint(lg) {
+		@media (max-width: 1400px) {
 			margin: 0;
 		}
 	}
@@ -112,7 +108,7 @@
 		span {
 			display: inline-block;
 			margin-left: 10px;
-			@include breakpoint(lg) {
+			@media (max-width: 1400px) {
 				display: none;
 			}
 		}
@@ -137,7 +133,7 @@
 		margin-top: 104px;
 		border-top: 1px solid $light-grey;
 		padding: 40px 0px;
-		@include breakpoint (lg) {
+		@media (max-width: 1400px) {
 			display: none;
 		}
 	}
@@ -178,20 +174,20 @@
 }
 
 .menu-acc {
-	@include breakpoint(xxx) {
+	@media (max-width: 1400px) {
 		margin-bottom: 48px;
 	}
-	@include breakpoint(lg) {
+	@media (max-width: 1400px) {
 		width: 100%;
 		margin-bottom: 0;
 	}
 
 	&__accordion {
 		width: 276px;
-		@include breakpoint(xxx){
+		@media (max-width: 1400px){
 			text-align: center;
 		}
-		@include breakpoint(lg){
+		@media (max-width: 1400px){
 			width: calc(100% + 30px);
 			margin-right: -15px;
 			text-align: right;
@@ -199,7 +195,7 @@
 	}
 
 	.footer__title {
-		@include breakpoint (lg) {
+		@media (max-width: 1400px) {
 			margin-bottom: 0;
 			cursor: pointer;
 			padding: 24px;
@@ -231,7 +227,7 @@
 	}
 
 	&__list {
-		@include breakpoint (lg) {
+		@media (max-width: 1400px) {
 			display: none;
 			background: $dark-grey;
 		}
@@ -241,7 +237,7 @@
 		width: auto;
 		transition: $transform;
 		position: relative;
-		@include breakpoint(lg) {
+		@media (max-width: 1400px) {
 			margin: 10px 0px;
 			padding: 0px 42px;
 		}
@@ -264,10 +260,35 @@
 }
 
 .menu-icon {
-	display: flex;
-	align-items: center;
-	gap: 32px;
+	display: grid;
+	grid-template-areas:
+				"a b c d"
+				"e e e e";
+	column-gap: 32px;
+	row-gap: 8px;
 	margin-top: 10px;
+	@media (max-width: 1400px) {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+	&__item {
+		&:nth-child(1) {
+			grid-area: e;
+		}
+		&:nth-child(2) {
+			grid-area: d;
+		}
+		&:nth-child(3) {
+			grid-area: c;
+		}
+		&:nth-child(4) {
+			grid-area: b;
+		}
+		&:nth-child(5) {
+			grid-area: a;
+		}
+	}
 
 	&__link {
 		width: 32px;
@@ -281,45 +302,5 @@
 			transition: $transform;
 		}
 
-	}
-}
-
-.icon-logo {
-	margin-top: 8px;
-}
-
-.menu-btns {
-	position: absolute;
-	left: 0;
-	top: 120px;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	gap: 24px;
-
-	@include breakpoint (lg) {
-		display: none;
-	}
-
-	&__link {
-		background: $primary-1;
-		border-radius: 100%;
-		width: 80px;
-		height: 80px;
-		display: block;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		opacity: 0.75;
-		transition: $transform;
-
-		&:hover {
-			opacity: 1;
-			transition: $transform;
-		}
-		@include breakpoint(xxx) {
-			width: 60px;
-			height: 60px;
-		}
 	}
 }

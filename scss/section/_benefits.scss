@@ -28,8 +28,11 @@
 		@include breakpoint(xlg) {
 			padding: 125px 0px;
 		}
-
 		@include breakpoint(md) {
+			padding: 100px 0px 135px 0px;
+		}
+
+		@include breakpoint(xs) {
 			background-position: top left -164px;
 			-moz-transform: scaleX(-1);
 			-o-transform: scaleX(-1);
@@ -80,13 +83,26 @@
 			position: relative;
 			z-index: 2;
 
-			@include breakpoint(md) {
-				display: flex;
-				flex-wrap: wrap;
+			@include breakpoint(lg) {
+				display: grid;
+				grid-template-columns: repeat(5,1fr);
 				margin-top: 58px;
 				justify-content: center;
-				gap: 44px;
+				gap: 47px;
 				row-gap: 48px;
+			}
+			@include breakpoint(md) {
+				gap: 44px;
+			}
+			@include breakpoint(sm) {
+				grid-template-columns: repeat(3,1fr);
+				justify-items: center;
+			}
+			@include breakpoint(xs) {
+				-moz-transform: scaleX(-1);
+				-o-transform: scaleX(-1);
+				-webkit-transform: scaleX(-1);
+				transform: scaleX(-1);
 			}
 		}
 
@@ -118,11 +134,16 @@
 			margin-right: -90px;
 			right: inherit;
 
-			@include breakpoint (lg) {
+			@include breakpoint (md) {
 				padding: 16px 24px;
+				max-width: 360px;
 			}
 
 
+		}
+
+		.benefit-text {
+			direction: rtl;
 		}
 
 		&__item {
@@ -131,12 +152,16 @@
 				content: "";
 				width: 0;
 				height: 0;
-				margin-top: 15px;
+				margin-top: 78px;
 				opacity: 0;
-				margin-right: 20px;
+				margin-right: -45px;
 				border-style: solid;
 				border-width: 0px 12px 19px 12px;
 				border-color: transparent transparent $bg-light transparent;
+				@include breakpoint(xxx) {
+					margin-top: 64px;
+					margin-right: -35px;
+				}
 			}
 
 			&:nth-child(1) {
@@ -144,20 +169,30 @@
 					@include breakpoint (md) {
 						margin-right: -30px;
 					}
+					@include breakpoint (xs) {
+						left: inherit;
+					}
 				}
 			}
 			&:nth-child(2) {
 				.benefits__inner {
-					@include breakpoint (md) {
+					@include breakpoint (sm) {
 						margin-right: -90px;
+					}
+					@include breakpoint (xs) {
+						left: inherit;
 					}
 				}
 			}
 			&:nth-child(3) {
 				.benefits__inner {
 					left: 30px;
-					@include breakpoint (md) {
-						margin-right: -156px;
+					@include breakpoint (sm) {
+						margin-right: -179px;
+						// left: inherit;
+					}
+					@include breakpoint (xs) {
+						margin-right: -179px;
 						left: inherit;
 					}
 				}
@@ -165,7 +200,11 @@
 			&:nth-child(4) {
 				.benefits__inner {
 					left: 30px;
-					@include breakpoint (md) {
+					@include breakpoint (sm) {
+						margin-right: -65px;
+						// left: inherit;
+					}
+					@include breakpoint (xs) {
 						margin-right: -30px;
 						left: inherit;
 					}
@@ -174,8 +213,11 @@
 
 			&:nth-child(5) {
 				.benefits__inner {
-					left: 30px;
-					@include breakpoint (md) {
+					left: 6px;
+					@include breakpoint (sm) {
+						left: -50px;
+					}
+					@include breakpoint (xs) {
 						margin-right: -90px;
 						left: inherit;
 					}
@@ -184,18 +226,30 @@
 
 			&:nth-child(6) {
 				.benefits__inner {
-					left: 30px;
-					@include breakpoint (md) {
-						margin-right: -156px;
+					// left: 10px;
+					margin-right: -67px;
+					@include breakpoint(md) {	
+						// left: inherit;			
+					}
+					@include breakpoint (sm) {
+						margin-right: -280px;
 						left: inherit;
+					}
+					@include breakpoint (xs) {
+						margin-right: -179px;
+						// left: inherit;
 					}
 				}
 			}
 
 			&:nth-child(7) {
 				.benefits__inner {
-					left: 40px;
-					@include breakpoint (md) {
+					left: 94px;
+					@include breakpoint (sm) {
+						margin-right: -53px;
+						left: inherit;
+					}
+					@include breakpoint (xs) {
 						margin-right: -30px;
 						left: inherit;
 					}
@@ -203,7 +257,11 @@
 			} &:nth-child(8) {
 				.benefits__inner {
 					left: 40px;
-					@include breakpoint (md) {
+					@include breakpoint (sm) {
+						margin-right: -240px;
+						// left: inherit;
+					}
+					@include breakpoint (xs) {
 						margin-right: -90px;
 						left: inherit;
 					}
@@ -212,15 +270,22 @@
 			&:nth-child(9) {
 				.benefits__inner {
 					left: -50px;
-					@include breakpoint (md) {
-						margin-right: -156px;
+					@include breakpoint (sm) {
+						margin-right: -144px;
+						// left: inherit;
+					}
+					@include breakpoint (xs) {
+						margin-right: -179px;
 						left: inherit;
 					}
 				}
 			} &:nth-child(10) {
+				@include breakpoint (sm) {
+					grid-column-start: 2;
+				}
 				.benefits__inner {
 					left: -50px;
-					@include breakpoint (md) {
+					@include breakpoint (xs) {
 						margin-right: -90px;
 						left: inherit;
 					}
@@ -231,11 +296,9 @@
 				&::before {
 					position: absolute;
 					content: "...";
-					width: 0;
-					height: 0;
-					margin-top: 15px;
-					opacity: 0;
-					margin-right: 20px;
+					margin-top: 33px;
+					margin-right: 43px;
+					font-size: 18px;
 				}
 			}
 		}

@@ -25,9 +25,9 @@ $(document).ready(function () {
     spaceBetween: 24,
     loop: true,
     direction: "horizontal",
-    autoplay: {
-      delay: 2000,
-    },
+    // autoplay: {
+    //   delay: 2000,
+    // },
     navigation: {
       nextEl: ".swiper-button-next",
       prevEl: ".swiper-button-prev",
@@ -307,85 +307,36 @@ $(document).ready(function () {
     }
   });
 
+  //tags
+  $("div.tag .tag-open").click(function () {
+    if ($(this).parent().hasClass("open")) {
+      $(this).parent().removeClass("open");
+      $("div.tag ul").slideUp();
+    } else {
+      $("div.tag ul").slideUp();
+      $(this).parent().children("ul").slideDown();
+      $("div.tag ul").removeClass("open");
+      $(this).parent().addClass("open");
+    }
+  });
+
   // timer
-  tailwind.config = {
-    theme: {
-      extend: {
-        colors: {
-          "light-gray": "#303640",
-          seconds: "#939292",
-          minutes: "#939292",
-          hours: "#939292",
-          days: "#939292",
-        },
-        fontFamily: {
-          body: ["Ubuntu", "sans-serif"],
-        },
-      },
-    },
-  };
-
-  ("use strict");
-
-  // Selectors
-  const daySpan = document.querySelector("#day");
-  const hourSpan = document.querySelector("#hour");
-  const minSpan = document.querySelector("#minutes");
-  const secSpan = document.querySelector("#seconds");
-  const dayDot = document.querySelector("#dot-day");
-  const hourDot = document.querySelector("#dot-hour");
-  const minDot = document.querySelector("#dot-minute");
-  const secDot = document.querySelector("#dot-second");
-  const hourContainer = hourDot.parentElement;
-  const minContainer = minDot.parentElement;
-  const secContainer = secDot.parentElement;
-
-  // main clock logic
-  setInterval(() => {
-    const now = new Date();
-    const time = {
-      day: now.getDay(),
-      hour: now.getHours(),
-      minute: now.getMinutes(),
-      sec: now.getSeconds(),
-    };
-
-    // update time in document
-    daySpan.textContent = padWithZeroes(time.day, 2);
-    hourSpan.textContent = padWithZeroes(time.hour, 2);
-    minSpan.textContent = padWithZeroes(time.minute, 2);
-    secSpan.textContent = padWithZeroes(time.sec, 2);
-
-    // update bar fill
-    // dayContainer.style.setProperty("--p", `${(time.day/100) * 100}`);
-    hourContainer.style.setProperty("--p", `${(time.hour / 24) * 100}`);
-    minContainer.style.setProperty("--p", `${(time.minute / 60) * 100}`);
-    secContainer.style.setProperty("--p", `${(time.sec / 60) * 100}`);
-
-    // update dot location
-    dayDot.style.transform = `rotate(${
-      (time.day * 360) / 50 + time.day * 360
-    }deg)`;
-    hourDot.style.transform = `rotate(${
-      (time.hour * 360) / 24 + time.hour * 360
-    }deg)`;
-    minDot.style.transform = `rotate(${
-      (time.minute * 360) / 60 + time.hour * 360
-    }deg)`;
-    secDot.style.transform = `rotate(${
-      (time.sec * 360) / 60 + time.minute * 360
-    }deg)`;
-  }, 1000);
-
-  function padWithZeroes(number, length) {
-    const zeroes = Array(length - number.toString().length)
-      .fill("0")
-      .join("");
-    return zeroes + number.toString(); // concatenating zeroes to given number
-  }
 
   // scroll btn
-  $("a").click(function () {
+
+  let prevScrollpos = window.pageYOffset;
+  let scrollBtn = document.querySelector("#menu-btns-fix");
+  window.onscroll = function () {
+    var currentScrollPos = window.pageYOffset;
+    if (prevScrollpos > currentScrollPos) {
+      scrollBtn.classList.add("active");
+    } else {
+      scrollBtn.classList.remove("active");
+    }
+    prevScrollpos = currentScrollPos;
+  };
+
+  $("#scroll-top").click(function () {
     $("html, body").animate(
       {
         scrollTop: $($(this).attr("href")).offset().top + "px",
@@ -405,12 +356,14 @@ $(document).ready(function () {
     }
   );
 
+  // header-mob btn
   $("#btn-header-mob").click(function () {
     $('.select-header').toggleClass("active")
     $('.header-bottom__list').toggle("active")
     }
   );
 
+  // header-menu cross
   $(".burger").click(function () {
     $('.header-menu-burger').toggleClass("active")
     $("html").toggleClass("overflow");

@@ -12,6 +12,12 @@ body {
 	@include body1;
 	overflow-x: hidden;
 	direction: rtl;
+	position: relative;
+}
+
+input:focus {
+	box-shadow: -8px -8px 16px rgba(179, 179, 179, 0.2), 8px 8px 16px rgba(179, 179, 179, 0.2);
+	transition: $transform;
 }
 
 .container-fluid {
@@ -22,7 +28,7 @@ body {
 
 .container {
 	width: 100%;
-	max-width: 1760px;
+	max-width: 1920px;
 	padding: 0px 80px;
 	margin: 0 auto;
 	direction: rtl;
@@ -51,6 +57,54 @@ body {
 	}
 }
 
+.menu-btns {
+	position: fixed;
+	left: 20px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 24px;
+	z-index: 202;
+	bottom: 0;
+	opacity: 0;
+	z-index: -1;
+
+	&__link {
+		background: $primary-1;
+		border-radius: 100%;
+		width: 80px;
+		height: 80px;
+		display: block;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		opacity: 0.75;
+		transition: $transform;
+
+		&:hover {
+			opacity: 1;
+			transition: $transform;
+		}
+		@include breakpoint(xlg) {
+			width: 60px;
+			height: 60px;
+		}
+		@include breakpoint(lg) {
+			width: 40px;
+			height: 40px;
+		}
+	}
+
+	.chat {
+		display: none;
+	}
+}
+
+.menu-btns.active {
+	opacity: 1;
+	z-index: 200;
+}
+
 .prev {
 	background: transparent;
 	background-image: url("../img/offer/arrow-next.png");
@@ -66,7 +120,7 @@ body {
 		width: 33px;
 		height: 80px;
 		right: 0px;
-		background-image: url("../img/offer/arrow-mob-r.svg");
+		background-image: url("../img/offer/arrow-mob-l.svg");
 		background-repeat: no-repeat;
 	}
 }
@@ -86,7 +140,7 @@ body {
 		width: 70px;
 		height: 80px;
 		left: 0;
-		background-image: url("../img/offer/arrow-mob-l.svg");
+		background-image: url("../img/offer/arrow-mob-r.svg");
 		background-repeat: no-repeat;
 	}
 }
@@ -153,6 +207,11 @@ body {
 
 		&:after {
 			content: none;
+		}
+		@include breakpoint(md) {
+			font-size: 24px;
+			line-height: 32px;
+			margin-top: 24px;
 		}
 	}
 
@@ -530,21 +589,66 @@ body {
 	.tag {
 		display: flex;
 		align-items: center;
+		position: relative;
 
 		&__btn {
 			@include body1;
 			color: $primary-2;
 			border: 1px solid $primary-2;
 			border-radius: 4px;
-			padding: 4px 16px;
+			padding: 4px 9px;
+			width: 100%;
+			max-width: 149px;
 			display: inline-block;
 			cursor: pointer;
+			transition:  $transform;
+			&:hover {
+				transition:  $transform;
+				color: $bg-light;
+				border: 1px solid $primary-2;
+				background: $primary-2;
+			}
 		}
 
 		&__arrow {
 			margin-right: 8px;
 			cursor: pointer;
+			transition:  $transform;
+			&:hover {
+				transition:  $transform;
+				opacity: 0.6;
+			}
 		}
+	
+		.tag-menu {
+			position: absolute;
+			background: $bg-light;
+			width: 100%;
+			max-width: 149px;
+			top: 35px;
+			box-shadow: 1px 9px 16px rgba(179, 179, 179, 0.2), 12px 13px 16px rgba(179, 179, 179, 0.2);
+			border-radius: 4px;
+			display: none;
+		
+				&__item {
+					margin: 4px;
+				}
+
+				&__link {
+					border-radius: 4px;
+					color: #DD8380;
+					width: 100%;
+					max-width: 149px;
+				}
+		}
+
+		.tag__btn.open {
+			transition:  $transform;
+			color: $bg-light;
+			border: 1px solid $primary-2;
+			background: $primary-2;
+		}
+	
 	}
 
 	.price-wrapper {
@@ -588,7 +692,9 @@ body {
 
 .wrapper-click {
 
-	&__btn {}
+	&__btn {
+		background: none;
+	}
 
 	&__nemu {}
 
@@ -610,6 +716,7 @@ body {
 @import "./section/news";
 @import "./section/benefits";
 @import "./section/sicrets";
+@import "./section/consultation";
 @import "./section/reviews";
 @import "./section/social";
 @import "./section/subscrible";
@@ -618,3 +725,4 @@ body {
 
 @import "./section/form";
 @import "./section/footer";
+@import "./media";

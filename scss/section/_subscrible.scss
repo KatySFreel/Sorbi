@@ -26,6 +26,10 @@
 		@include breakpoint (lg) {
 			width: 100%;
 		}
+		@include breakpoint (md) {
+			width: 100%;
+			margin-top: 36px;
+		}
 	}
 
 	&__form {
@@ -55,14 +59,27 @@
 	&__form-input {
 		border-bottom: 1px solid $bg-dark;
 		width: 100%;
-		padding: 4px 0px;
+		padding: 4px;
 		background: transparent;
+		transition: $transform;
+		cursor: pointer;
 		@include breakpoint(lg) {
 			margin-bottom: 8px;
 		}
 		&::placeholder{
 			background: transparent;
 		}
+		
+	}
+
+	input[type=checkbox] {
+		cursor: pointer;
+	}
+
+	input:focus {
+		box-shadow: none;
+		border-bottom: 1px solid $primary-1;
+		transition: $transform;
 	}
 
 	&__form-text {
