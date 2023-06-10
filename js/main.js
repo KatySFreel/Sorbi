@@ -25,9 +25,9 @@ $(document).ready(function () {
     spaceBetween: 24,
     loop: true,
     direction: "horizontal",
-    // autoplay: {
-    //   delay: 2000,
-    // },
+    autoplay: {
+      delay: 2000,
+    },
     navigation: {
       nextEl: ".swiper-button-next",
       prevEl: ".swiper-button-prev",
