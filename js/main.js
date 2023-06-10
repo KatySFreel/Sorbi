@@ -1,5 +1,5 @@
 $(document).ready(function () {
-  const offerSwiper = new Swiper('.offer__slider', {
+  const offerSwiper = new Swiper(".offer__slider", {
     slidesPerView: 1,
     rtl: true,
     direction: "horizontal",
@@ -9,13 +9,13 @@ $(document).ready(function () {
       disableOnInteraction: false,
     },
     pagination: {
-      el:  ".slider__pagination",
+      el: ".slider__pagination",
       type: "bullets",
       clickable: true,
-   },
-   navigation: {
-      nextEl:  ".offer-next",
-      prevEl:  ".offer-prev",
+    },
+    navigation: {
+      nextEl: ".offer-next",
+      prevEl: ".offer-prev",
     },
   });
 
@@ -25,9 +25,9 @@ $(document).ready(function () {
     spaceBetween: 24,
     loop: true,
     direction: "horizontal",
-    autoplay: {
-      delay: 2000,
-    },
+    // autoplay: {
+    //   delay: 3000,
+    // },
     navigation: {
       nextEl: ".swiper-button-next",
       prevEl: ".swiper-button-prev",
@@ -54,6 +54,7 @@ $(document).ready(function () {
           type: "bullets",
           clickable: true,
         },
+        rtl: true,
       },
       580: {
         slidesPerView: 2,
@@ -93,6 +94,7 @@ $(document).ready(function () {
           type: "bullets",
           enabled: true,
           clickable: true,
+          rtl: true,
         },
       },
       480: {
@@ -102,6 +104,7 @@ $(document).ready(function () {
           el: ".swiper-pagination",
           type: "bullets",
           clickable: true,
+          rtl: true,
         },
       },
       580: {
@@ -110,6 +113,7 @@ $(document).ready(function () {
           el: ".swiper-pagination",
           type: "bullets",
           clickable: true,
+          rtl: true,
         },
       },
       840: {
@@ -118,6 +122,7 @@ $(document).ready(function () {
           el: ".swiper-pagination",
           type: "bullets",
           clickable: true,
+          rtl: true,
         },
       },
       1200: {
@@ -278,7 +283,7 @@ $(document).ready(function () {
     }
   });
 
-  // Accordion
+  // Accordion benefits
   $("li.benefits__item img").click(function () {
     if ($(this).parent().hasClass("open")) {
       $("li.benefits__item").removeClass("open");
@@ -315,13 +320,69 @@ $(document).ready(function () {
     } else {
       $("div.tag ul").slideUp();
       $(this).parent().children("ul").slideDown();
-      $("div.tag ul").removeClass("open");
+      $("div.tag").removeClass("open");
+      $(this).parent().addClass("open");
+    }
+  });
+
+  //volume
+  $("div.volume .volume-open").click(function () {
+    if ($(this).parent().hasClass("open")) {
+      $(this).parent().removeClass("open");
+      $("div.volume ul").slideUp();
+    } else {
+      $("div.volume ul").slideUp();
+      $(this).parent().children("ul").slideDown();
+      $("div.volume").removeClass("open");
       $(this).parent().addClass("open");
     }
   });
 
   // timer
-  
+  // Set the date we're counting down to
+  var countDownDate = new Date("Jan 5, 2024 15:37:25").getTime();
+  var secondsEl = document.getElementById("seconds");
+  var minutesEl = document.getElementById("minutes");
+  var hoursEl = document.getElementById("hours");
+  var daysEl = document.getElementById("days");
+
+  // Update the count down every 1 second
+  var x = setInterval(function () {
+    // Get today's date and time
+    var now = new Date().getTime();
+
+    // Find the distance between now and the count down date
+    var distance = countDownDate - now;
+
+    // Time calculations for days, hours, minutes and seconds
+    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    var hours = Math.floor(
+      (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+    );
+    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    setAnimation(secondsEl, seconds, 60);
+    setAnimation(minutesEl, minutes, 60);
+    setAnimation(hoursEl, hours, 24);
+    setAnimation(daysEl, days, 365);
+  }, 1000);
+
+  function setAnimation(elem, time, divider) {
+    var time = time;
+    var initialOffset = "440";
+    var progress = time;
+
+    if (time == 0) {
+      elem.querySelector(".circle_animation").style.strokeDashoffset = 0;
+    }
+
+    if (time > 0) {
+      elem.querySelector(".timer-number").textContent = time;
+      elem.querySelector(".circle_animation").style.strokeDashoffset =
+        progress * (initialOffset / divider) + 1;
+    }
+  }
 
   // scroll btn
 
@@ -352,25 +413,21 @@ $(document).ready(function () {
 
   // header btn
   $("#btn-header").click(function () {
-    $('.select-header').toggleClass("active")
-    $('.header-bottom__list').toggle("active")
-    }
-  );
+    $(".select-header").toggleClass("active");
+    $(".header-bottom__list").toggle("active");
+  });
 
   // header-mob btn
   $("#btn-header-mob").click(function () {
-    $('.select-header').toggleClass("active")
-    $('.header-bottom__list').toggle("active")
-    }
-  );
+    $(".select-header").toggleClass("active");
+    $(".header-bottom__list").toggle("active");
+  });
 
   // header-menu cross
   $(".burger").click(function () {
-    $('.header-menu-burger').toggleClass("active")
+    $(".header-menu-burger").toggleClass("active");
     $("html").toggleClass("overflow");
     $(".burger__img").toggleClass("active");
     $(".burger-cross").toggleClass("active");
-    }
-  );
-
+  });
 });

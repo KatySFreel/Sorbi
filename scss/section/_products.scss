@@ -3,8 +3,7 @@
 		margin-top: 29px;
 	}
 	&__content {
-		height: 100%;
-		max-height: 131px;
+		height: 162px;
 		overflow: hidden;
 	}
 	&__settings {
@@ -13,6 +12,39 @@
 	.product-container {
 		@include breakpoint(lg) {
 			max-width: 100%;
+		}
+	}
+
+	&__ingr {
+		font-size: 15px;
+	}
+
+	@media (max-width: 1400px) {
+		.price-wrapper {
+			gap: 8px;
+		}
+		.volume {
+			font-size: 16px;
+   		line-height: 24px;
+		}
+	}
+	@include breakpoint(xlg) {
+		.price-wrapper {
+			gap: 24px;
+			@include breakpoint(lg) {
+					gap: 10px;
+			}
+		}
+		.volume {
+			font-size: 20px;
+			line-height: 35px;
+			@include breakpoint(lg) {
+					font-size: 16px;
+					line-height: 24px;
+					.price-wrapper {
+						gap: 16px;
+					}
+			}
 		}
 	}
 }

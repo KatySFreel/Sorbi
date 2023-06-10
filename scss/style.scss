@@ -85,13 +85,18 @@ input:focus {
 			opacity: 1;
 			transition: $transform;
 		}
+
 		@include breakpoint(xlg) {
 			width: 60px;
 			height: 60px;
 		}
+
 		@include breakpoint(lg) {
 			width: 40px;
 			height: 40px;
+			img {
+				width: 32px;
+			}
 		}
 	}
 
@@ -208,6 +213,7 @@ input:focus {
 		&:after {
 			content: none;
 		}
+
 		@include breakpoint(md) {
 			font-size: 24px;
 			line-height: 32px;
@@ -417,7 +423,7 @@ input:focus {
 
 	&__content {
 		height: 100%;
-		max-height: 111px;
+		max-height: 152px;
 	}
 
 	&__title {
@@ -591,7 +597,7 @@ input:focus {
 		align-items: center;
 		position: relative;
 
-		&__btn {
+		&__btn.tag-open {
 			@include body1;
 			color: $primary-2;
 			border: 1px solid $primary-2;
@@ -599,27 +605,49 @@ input:focus {
 			padding: 4px 9px;
 			width: 100%;
 			max-width: 149px;
+			text-align: center;
 			display: inline-block;
 			cursor: pointer;
-			transition:  $transform;
+			transition: $transform;
+
 			&:hover {
-				transition:  $transform;
+				transition: $transform;
 				color: $bg-light;
-				border: 1px solid $primary-2;
 				background: $primary-2;
+			}
+		}
+
+		.primary-tag,
+		.minikit-tag,
+		.grey-tag,
+		.dark-tag {
+			@include body1;
+			border-radius: 4px;
+			padding: 4px 9px;
+			width: 100%;
+			max-width: 149px;
+			text-align: center;
+			display: inline-block;
+			cursor: pointer;
+			transition: $transform;
+
+			&:hover {
+				transition: $transform;
+				color: $bg-light;
 			}
 		}
 
 		&__arrow {
 			margin-right: 8px;
 			cursor: pointer;
-			transition:  $transform;
+			transition: $transform;
+
 			&:hover {
-				transition:  $transform;
+				transition: $transform;
 				opacity: 0.6;
 			}
 		}
-	
+
 		.tag-menu {
 			position: absolute;
 			background: $bg-light;
@@ -629,26 +657,108 @@ input:focus {
 			box-shadow: 1px 9px 16px rgba(179, 179, 179, 0.2), 12px 13px 16px rgba(179, 179, 179, 0.2);
 			border-radius: 4px;
 			display: none;
-		
-				&__item {
-					margin: 4px;
-				}
 
-				&__link {
-					border-radius: 4px;
-					color: #DD8380;
-					width: 100%;
-					max-width: 149px;
-				}
+			&__item {
+				margin: 4px;
+			}
+
+			&__link {
+				border-radius: 4px;
+				color: #DD8380;
+				width: 100%;
+				max-width: 149px;
+			}
 		}
 
-		.tag__btn.open {
-			transition:  $transform;
-			color: $bg-light;
+		.primary-tag {
+			color: $primary-2;
 			border: 1px solid $primary-2;
-			background: $primary-2;
+
+			&:hover {
+				background: $primary-2;
+			}
 		}
-	
+
+		.minikit-tag {
+			color: #DD8380;
+			border: 1px solid #DD8380;
+
+			&:hover {
+				background: #DD8380;
+			}
+		}
+
+		.dark-tag {
+			color: $dark-grey;
+			border: 1px solid $dark-grey;
+
+			&:hover {
+				background: $dark-grey;
+			}
+		}
+
+		.grey-tag {
+			color: $grey;
+			border: 1px solid $grey;
+
+			&:hover {
+				background: $grey;
+			}
+		}
+
+		// .tag.open .tag__btn.tag-open {
+		// 	transition: $transform;
+		// 	color: $bg-light;
+		// 	background: $primary-2;
+		// }
+	}
+
+	.volume {
+		cursor: pointer;
+			transition: $transform;
+			opacity: 1;
+
+			&:hover {
+				transition: $transform;
+				color: $grey;
+			}
+	}
+
+	.dropdown {
+		position: relative;
+
+	}
+	.volume-menu {
+		box-shadow: 1px 9px 16px rgba(179, 179, 179, 0.2), 12px 13px 16px rgba(179, 179, 179, 0.2);
+	}
+
+	.dropdown-menu {
+			position: absolute;
+			background: $bg-light;
+			width: 100%;
+			min-width: 200px;
+			top: 35px;
+			border-radius: 4px;
+			z-index: 200;
+			display: none;
+
+			&__item {
+				// background: $bg-light;
+				font-size: 16px;
+				line-height: 28px;
+				width: 100%;
+				display: block;
+				padding: 8px 16px;
+				color: $bg-dark;
+				transition: $transform;
+				&:nth-child(1) {
+					background:$light-grey;
+				}
+				:hover {
+					transition: $transform;
+					background:$light-grey;
+				}
+			}
 	}
 
 	.price-wrapper {
@@ -666,7 +776,6 @@ input:focus {
 		font-size: 20px;
 		line-height: 35px;
 		text-transform: uppercase;
-		opacity: 0.7;
 		direction: ltr;
 	}
 

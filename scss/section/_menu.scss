@@ -111,8 +111,10 @@
 
 	.footer__menu-link {
 		@include breakpoint(lg) {
-			width: 100%;
-			max-width: 80%;
+			img {
+				width: 100%;
+				max-width: 80%;
+			}
 		}
 
 		&:hover {
