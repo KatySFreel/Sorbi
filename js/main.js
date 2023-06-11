@@ -25,9 +25,9 @@ $(document).ready(function () {
     spaceBetween: 24,
     loop: true,
     direction: "horizontal",
-    // autoplay: {
-    //   delay: 3000,
-    // },
+    autoplay: {
+      delay: 3000,
+    },
     navigation: {
       nextEl: ".swiper-button-next",
       prevEl: ".swiper-button-prev",
@@ -74,7 +74,6 @@ $(document).ready(function () {
     spaceBetween: 10,
     loop: true,
     direction: "horizontal",
-    autoHeight: true,
     autoplay: {
       delay: 2000,
     },
@@ -131,13 +130,12 @@ $(document).ready(function () {
     },
   });
 
-  const newsVideoSwiper = new Swiper(".video-swiper", {
+  const videoSwiper = new Swiper(".video-swiper", {
     rtl: true,
     slidesPerView: 1,
     spaceBetween: 10,
     loop: true,
     direction: "horizontal",
-    autoHeight: true,
     autoplay: {
       delay: 2000,
     },
