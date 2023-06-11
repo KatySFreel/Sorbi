@@ -27,6 +27,8 @@
   top: 0;
   right: 0;
   bottom: 0;
+  -webkit-transition: 0.2s;
+  -o-transition: 0.2s;
   transition: 0.2s;
   border-radius: 5px;
   visibility: hidden\9 ;
@@ -47,4 +49,4 @@
 .nano:hover > .nano-pane, .nano-pane.active, .nano-pane.flashed {
   visibility: visible\9 ;
   opacity: 0.99;
-}
+}/*# sourceMappingURL=nanoscroller.css.map */

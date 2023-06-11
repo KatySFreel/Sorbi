@@ -239,7 +239,8 @@ input:focus {
 		width: 50%;
 
 		img {
-			object-fit: cover;
+			-o-object-fit: cover;
+			   object-fit: cover;
 			width: 100%;
 
 			@include breakpoint(md) {
@@ -398,7 +399,8 @@ input:focus {
 					left: 15px;
 					width: 16px;
 					height: 16px;
-					object-fit: contain;
+					-o-object-fit: contain;
+					   object-fit: contain;
 				}
 
 				&:hover::before {
@@ -413,7 +415,8 @@ input:focus {
 	&__img {
 		position: relative;
 		width: 100%;
-		object-fit: cover;
+		-o-object-fit: cover;
+		   object-fit: cover;
 		transition: 1s;
 
 		&:hover {
@@ -480,6 +483,7 @@ input:focus {
 
 	.favorite-icon {
 		position: absolute;
+		background: transparent;
 		width: 24px;
 		height: 24px;
 		display: block;
@@ -550,7 +554,8 @@ input:focus {
 			font-weight: 400;
 			font-size: 16px;
 			line-height: 28px;
-			text-decoration-line: underline;
+			-webkit-text-decoration-line: underline;
+			        text-decoration-line: underline;
 			color: $bg-dark;
 
 		}
@@ -570,6 +575,7 @@ input:focus {
 
 	&__wrapper {
 		position: relative;
+		display: block;
 
 		.img-text,
 		.img-text-light {
