@@ -33,13 +33,12 @@
 		}
 
 		@include breakpoint(xs) {
-			background-position: top left -164px;
-			-moz-transform: scaleX(-1);
-			-o-transform: scaleX(-1);
-			-webkit-transform: scaleX(-1);
-			transform: scaleX(-1);
-			filter: FlipH;
-			-ms-filter: "FlipH";
+			background: url('../img/benefits/ben-bg-mob.jpg');
+			padding-top: 240px;
+			padding-bottom: 352px;
+			background-repeat: no-repeat;
+			background-position: center center;
+			background-size: cover;
 			padding: 100px 0px;
 		}
 

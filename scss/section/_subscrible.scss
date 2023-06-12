@@ -11,6 +11,12 @@
 		background-size: cover;
 		margin: 0;
 	}
+	@include breakpoint (md) {
+		background: url('../img/subscrible/sub-bg-mob.jpg');
+		background-position: center bottom;
+		background-repeat: no-repeat;
+		background-size: contain;
+	}
 
 	&__title {
 		text-align: center;
