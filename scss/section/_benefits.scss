@@ -133,6 +133,7 @@
 			margin-top: 27px;
 			margin-right: -90px;
 			right: inherit;
+			z-index: 20;
 
 			@include breakpoint (md) {
 				padding: 16px 24px;
@@ -189,7 +190,6 @@
 					left: 30px;
 					@include breakpoint (sm) {
 						margin-right: -179px;
-						// left: inherit;
 					}
 					@include breakpoint (xs) {
 						margin-right: -179px;
@@ -202,7 +202,6 @@
 					left: 30px;
 					@include breakpoint (sm) {
 						margin-right: -65px;
-						// left: inherit;
 					}
 					@include breakpoint (xs) {
 						margin-right: -30px;
@@ -210,7 +209,6 @@
 					}
 				}
 			}
-
 			&:nth-child(5) {
 				.benefits__inner {
 					left: 6px;
@@ -223,13 +221,11 @@
 					}
 				}
 			}
-
 			&:nth-child(6) {
 				.benefits__inner {
-					// left: 10px;
 					margin-right: -67px;
-					@include breakpoint(md) {	
-						// left: inherit;			
+					left: 20px;
+					@include breakpoint(md) {		
 					}
 					@include breakpoint (sm) {
 						margin-right: -280px;
@@ -237,11 +233,9 @@
 					}
 					@include breakpoint (xs) {
 						margin-right: -179px;
-						// left: inherit;
 					}
 				}
 			}
-
 			&:nth-child(7) {
 				.benefits__inner {
 					left: 94px;
@@ -254,7 +248,8 @@
 						left: inherit;
 					}
 				}
-			} &:nth-child(8) {
+			}
+			&:nth-child(8) {
 				.benefits__inner {
 					left: 40px;
 					@include breakpoint (sm) {
@@ -279,7 +274,8 @@
 						left: inherit;
 					}
 				}
-			} &:nth-child(10) {
+			}
+			&:nth-child(10) {
 				@include breakpoint (sm) {
 					grid-column-start: 2;
 				}
@@ -297,7 +293,6 @@
 					position: absolute;
 					content: "...";
 					margin-top: 33px;
-					margin-right: 43px;
 					font-size: 18px;
 				}
 			}

@@ -294,9 +294,6 @@ $(document).ready(function () {
     }
   });
 
-  // scroll sicrets
-  $(".nano").nanoScroller({ alwaysVisible: true });
-
   // menu accordion
   $("div.menu-acc__accordion p").click(function () {
     if ($(this).parent().hasClass("open")) {
@@ -309,6 +306,9 @@ $(document).ready(function () {
       $(this).parent().addClass("open");
     }
   });
+
+  // scroll sicrets
+  $(".nano").nanoScroller({ alwaysVisible: true });
 
   //tags
   $("div.tag .tag-open").click(function () {
@@ -337,7 +337,6 @@ $(document).ready(function () {
   });
 
   // timer
-  // Set the date we're counting down to
   var countDownDate = new Date("Jan 5, 2024 15:37:25").getTime();
   var secondsEl = document.getElementById("seconds");
   var minutesEl = document.getElementById("minutes");
@@ -367,23 +366,53 @@ $(document).ready(function () {
   }, 1000);
 
   function setAnimation(elem, time, divider) {
-    var time = time;
-    var initialOffset = "440";
+    // Получаем стили для элемента
+    let styles = getComputedStyle(document.documentElement);
+    // Получаем значение переменной
+    let circleWidth = parseInt(
+      styles.getPropertyValue("--circle-width").trim()
+    );
+    let circleWeight = parseInt(
+      styles.getPropertyValue("--circle-weight").trim()
+    );
+    let circleElem = elem.querySelector(".circle_animation");
     var progress = time;
+    var radius = parseInt(circleWidth / 2 - circleWeight / 2);
+    var initialOffset = circleLength(radius);
+    circleElem.setAttribute("r", radius);
+    circleElem.setAttribute("cx", circleWidth / 2);
+    circleElem.setAttribute("cy", circleWidth / 2);
+    circleElem.setAttribute("stroke-width", circleWeight);
+    circleElem.style.strokeWidth = circleWeight;
+    circleElem.style.r = radius;
+    circleElem.style.cx = circleWidth / 2;
+    circleElem.style.cy = circleWidth / 2;
+
+    circleElem.style.strokeDasharray = initialOffset;
+    circleElem.setAttribute("stroke-dasharray", initialOffset);
 
     if (time == 0) {
-      elem.querySelector(".circle_animation").style.strokeDashoffset = 0;
+      circleElem.setAttribute("stroke-dashoffset", 0);
+      circleElem.style.strokeDashoffset = 0;
     }
 
     if (time > 0) {
-      elem.querySelector(".timer-number").textContent = time;
-      elem.querySelector(".circle_animation").style.strokeDashoffset =
-        progress * (initialOffset / divider) + 1;
+      elem.querySelector(".timer-number").textContent = time < 10 ? `0${time}` : time;
+      circleElem.setAttribute(
+        "stroke-dashoffset",
+        parseInt(progress * (initialOffset / divider) + 1)
+      );
+      circleElem.style.strokeDashoffset = parseInt(
+        progress * (initialOffset / divider) + 1
+      );
     }
   }
 
-  // scroll btn
+  function circleLength(r) {
+    return Math.floor(2 * Math.PI * r);
+  }
 
+  // scroll btn
   let prevScrollpos = window.pageYOffset;
   let scrollBtn = document.querySelector("#menu-btns-fix");
   window.onscroll = function () {

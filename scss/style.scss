@@ -432,8 +432,6 @@ input:focus {
 	&__title {
 		margin-top: 20px;
 		font-family: 'Montserrat';
-		font-style: normal;
-		font-weight: 400;
 		font-size: 20px;
 		line-height: 35px;
 		color: #000000;
@@ -443,7 +441,6 @@ input:focus {
 	&__ingr {
 		margin-top: 4px;
 		font-family: 'Montserrat';
-		font-weight: 400;
 		font-size: 16px;
 		line-height: 28px;
 		color: #000000;
@@ -515,7 +512,6 @@ input:focus {
 		cursor: pointer;
 
 		span {
-			font-weight: 400;
 			font-size: 20px;
 			line-height: 28px;
 			color: $bg-light;
@@ -551,7 +547,6 @@ input:focus {
 		&__link {
 			font-family: 'Montserrat';
 			font-style: normal;
-			font-weight: 400;
 			font-size: 16px;
 			line-height: 28px;
 			-webkit-text-decoration-line: underline;
@@ -778,7 +773,6 @@ input:focus {
 		align-items: center;
 		flex-direction: row;
 		font-family: "Montserrat";
-		font-weight: 400;
 		font-size: 20px;
 		line-height: 35px;
 		text-transform: uppercase;
@@ -786,13 +780,11 @@ input:focus {
 	}
 
 	.price-new {
-		font-weight: 400;
 		font-size: 20px;
 		line-height: 30px;
 	}
 
 	.price-old {
-		font-weight: 400;
 		font-size: 20px;
 		line-height: 30px;
 		color: #939292;

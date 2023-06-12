@@ -17,6 +17,10 @@
 		&::after {
 			content: none;
 		}
+		@include breakpoint(md) {
+			font-size: 20px;
+			line-height: 24px;
+		}
 	}
 
 	&__form-box {

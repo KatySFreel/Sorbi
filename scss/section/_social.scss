@@ -15,6 +15,7 @@
 		margin: 52px auto 64px;
 		@include breakpoint(md) {
 			grid-template-columns: repeat(2, 1fr);
+			margin: 52px auto 32px;
 		}
 	}
 
@@ -81,7 +82,7 @@
 		display: none; 
 		@include breakpoint (lg) {
 			display: block;
-			padding: 15px;
+			padding: 0px 15px;
 			width: 100%;
 			text-align: center;
 		}

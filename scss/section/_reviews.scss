@@ -12,6 +12,11 @@
 	@include breakpoint(lg) {
 		padding: 38px 0px;
 	}
+	@include breakpoint(sm) {
+		background: url('../img/reviews/small/rev-bg.jpg');
+		background-repeat: no-repeat;
+		background-size: cover;
+	}
 
 	.container-reviews {
 		margin: 0;

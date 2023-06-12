@@ -286,7 +286,11 @@
           <div class="swiper-wrapper news-swiper__wrapper">
             <!-- Slides -->
             <div class="offer__item slide-1 swiper-slide">
-              <img src="./img/offer/1.jpg" class="offer__img" alt="">
+              <picture>
+                <source srcset="./img/offer/small/1.jpg" media="(max-width: 468px)">
+                <source srcset="./img/offer/1.jpg">
+                <img src="./img/offer/1.jpg" class="offer__img" alt="" fetchpriority="high">
+              </picture>
               <div class="container">
                 <div class="wrap">
                   <h2 class="offer__title">
@@ -302,7 +306,11 @@
               </div>
             </div>
             <div class="offer__item slide-2 swiper-slide">
-              <img src="./img/offer/2.jpg" class="offer__img" alt="">
+              <picture>
+                <source srcset="./img/offer/small/2.jpg" media="(max-width: 468px)">
+                <source srcset="./img/offer/2.jpg">
+                <img src="./img/offer/2.jpg" class="offer__img" alt="" fetchpriority="high">
+              </picture>
               <div class="container">
                 <div class="wrap">
                   <h2 class="offer__title">
@@ -318,7 +326,11 @@
               </div>
             </div>
             <div class="offer__item slide-3 swiper-slide">
-              <img src="./img/offer/3.jpg" class="offer__img" alt="">
+              <picture>
+                <source srcset="./img/offer/small/3.jpg" media="(max-width: 468px)">
+                <source srcset="./img/offer/3.jpg">
+                <img src="./img/offer/3.jpg" class="offer__img" alt="" fetchpriority="high">
+              </picture>
               <div class="container">
                 <div class="wrap">
                   <h2 class="offer__title">
@@ -334,7 +346,11 @@
               </div>
             </div>
             <div class="offer__item slide-4 swiper-slide">
-              <img src="./img/offer/4.jpg" class="offer__img" alt="">
+              <picture>
+                <source srcset="./img/offer/small/4.jpg" media="(max-width: 468px)">
+                <source srcset="./img/offer/4.jpg">
+                <img src="./img/offer/4.jpg" class="offer__img" alt="" fetchpriority="high">
+              </picture>
               <div class="container">
                 <div class="wrap">
                   <h2 class="offer__title">
@@ -350,7 +366,6 @@
               </div>
             </div>
           </div>
-          <!-- If we need pagination -->
           <div class="slider-nav">
             <button class="prev offer-prev"></button>
             <button class="next offer-next"></button>
@@ -819,7 +834,11 @@
     <section class="sale section">
       <div class="sale__wrapper section__wrapper">
         <div class="sale__item section__item">
-          <img src="./img/sale/girl.jpg" alt="">
+          <picture>
+            <source srcset="./img/sale/small-girl.jpg" media="(max-width: 468px)">
+            <source srcset="./img/sale/girl.jpg">
+            <img srcset="./img/sale/girl.jpg" alt="girl">
+          </picture>
           <p class="sale__title-abs">
             מבצעים חמים
           </p>
@@ -833,42 +852,51 @@
             </div>
             <div class="timer">
               <div class="timer__wrapper">
-                <div class="item html" id="days">
-                  <span class="timer-number">0</span>
-                  <svg width="124" height="124" xmlns="http://www.w3.org/2000/svg">
+                <div class="item html" id="seconds">
+                  <div class="timer__text">
+                    <span class="timer-number">0</span>
+                    <span>ימים</span>
+                  </div>
+                  <svg xmlns="http://www.w3.org/2000/svg">
                     <g>
-                      <title>Layer 1</title>
-                      <circle class="circle_animation" r="53.85699" cy="59" cx="59" stroke-width="6" stroke-linecap="round" stroke="#939292" fill="none" ></circle>
-                    </g>
-                  </svg>
-                </div>
-                <div class="item html" id="hours">
-                  <span class="timer-number">0</span>
-                  <svg width="124" height="124" xmlns="http://www.w3.org/2000/svg">
-                    <g>
-                      <title>Layer 1</title>
-                      <circle class="circle_animation" r="53.85699" cy="59" cx="59" stroke-width="6" stroke-linecap="round" stroke="#939292" fill="none" ></circle>
+                      <circle class="circle_animation" stroke-linecap="round" stroke-width="4" stroke="#939292" fill="none" />
                     </g>
                   </svg>
                 </div>
                 <div class="item html" id="minutes">
-                  <span class="timer-number">0</span>
-                  <svg width="124" height="124" xmlns="http://www.w3.org/2000/svg">
+                  <div class="timer__text">
+                    <span class="timer-number">0</span>
+                    <span>שעות</span>
+                  </div>
+                  <svg xmlns="http://www.w3.org/2000/svg">
                     <g>
-                      <title>Layer 1</title>
-                      <circle class="circle_animation" r="53.85699" cy="59" cx="59" stroke-width="6" stroke-linecap="round" stroke="#939292" fill="none" ></circle>
+                      <circle class="circle_animation" stroke-linecap="round" stroke-width="4" stroke="#939292" fill="none" />
                     </g>
                   </svg>
                 </div>
-                <div class="item html" id="seconds">
-                  <span class="timer-number">0</span>
-                  <svg width="124" height="124" xmlns="http://www.w3.org/2000/svg">
+                <div class="item html" id="hours">
+                  <div class="timer__text">
+                    <span class="timer-number">0</span>
+                    <span>דקות</span>
+                  </div>
+                  <svg xmlns="http://www.w3.org/2000/svg">
                     <g>
-                      <title>Layer 1</title>
-                      <circle class="circle_animation" r="53.85699" cy="59" cx="59" stroke-width="6" stroke-linecap="round" stroke="#939292" fill="none" ></circle>
+                      <circle class="circle_animation" stroke-linecap="round" stroke-width="4" stroke="#939292" fill="none" />
                     </g>
                   </svg>
                 </div>
+
+                <div class="item html" id="days">
+                  <div class="timer__text">
+                    <span class="timer-number">0</span>
+                    <span>שניות</span>
+                  </div>
+                  <svg xmlns="http://www.w3.org/2000/svg">
+                    <g>
+                      <circle class="circle_animation" stroke-linecap="round" stroke-width="4" stroke="#939292" fill="none" />
+                    </g>
+                  </svg>
+                </div> 
               </div>
             </div>
             <div class="product sale-product">
@@ -1047,7 +1075,11 @@
               <div class="swiper-wrapper news-swiper__wrapper">
                 <!-- Slides -->
                 <div class="swiper-slide news-slide section-slide">
-                  <img src="./img/news/bg-1.jpg" class="section-slide__img" alt="">
+                  <picture>
+                    <source srcset="./img/news/small/bg-1.jpg" media="(max-width: 468px)">
+                    <source srcset="./img/news/bg-1.jpg">
+                    <img src="./img/news/bg-1.jpg" class="section-slide__img" alt="">
+                  </picture>
                   <div class="news-slide__top section-slide__top ">
                     <div class="news-slide__btns section-slide__btns">
                       <button class="prev news-slide-prev section-slide__prev"></button>
@@ -1076,7 +1108,11 @@
                   </a>
                 </div>
                 <div class="swiper-slide news-slide section-slide">
-                  <img src="./img/news/bg-1.jpg" class="section-slide__img" alt="">
+                  <picture>
+                    <source srcset="./img/news/small/bg-1.jpg" media="(max-width: 468px)">
+                    <source srcset="./img/news/bg-1.jpg">
+                    <img src="./img/news/bg-1.jpg" class="section-slide__img" alt="">
+                  </picture>
                   <div class="news-slide__top section-slide__top">
                     <div class="news-slide__btns section-slide__btns">
                       <button class="prev news-slide-prev section-slide__prev"></button>
@@ -1140,7 +1176,11 @@
                 <div class="swiper-wrapper news-swiper__wrapper">
                   <!-- Slides -->
                   <div class="swiper-slide video-slide section-slide">
-                    <img src="./img/news/bg-2.jpg" alt="" class="section-slide__img">
+                    <picture>
+                      <source srcset="./img/news/small/bg-2.jpg" media="(max-width: 468px)">
+                      <source srcset="./img/news/bg-2.jpg">
+                      <img src="./img/news/bg-2.jpg" alt="" class="section-slide__img">
+                    </picture>
                     <div class="video-slide__top section-slide__top">
                       <div class="video-slide__btns section-slide__btns">
                         <button class="prev video-slide-prev section-slide__prev"></button>
@@ -1165,7 +1205,11 @@
                     </a>
                   </div>
                   <div class="swiper-slide video-slide section-slide">
-                    <img src="./img/news/bg-2.jpg" class="section-slide__img" alt="">
+                    <picture>
+                      <source srcset="./img/news/small/bg-2.jpg" media="(max-width: 468px)">
+                      <source srcset="./img/news/bg-2.jpg">
+                      <img src="./img/news/bg-2.jpg" alt="" class="section-slide__img">
+                    </picture>
                     <div class="video-slide__top section-slide__top">
                       <div class="video-slide__btns section-slide__btns">
                         <button class="prev video-slide-prev section-slide__prev"></button>
@@ -1330,7 +1374,11 @@
                 סודות מעצבי השיער
               </h3>
             </div>
-            <img src="./img/sicrets/s-bg.jpg" alt="">
+            <picture>
+              <source srcset="./img/sicrets/small/s-bg.jpg" media="(max-width: 468px)">
+              <source srcset="./img/sicrets/s-bg.jpg">
+              <img src="./img/sicrets/s-bg.jpg" alt="">
+            </picture>
           </div>
           <div class="sicrets__item">
             <div class="sicrets__top section__top">
@@ -1350,7 +1398,11 @@
                     <p class="sicrets__list-title">
                       מחקרי מעבדה של יעילות מוצרי ד"ר סורבי
                     </p>
-                    <img src="./img/sicrets/s-1.jpg" alt="">
+                    <picture>
+                      <source srcset="./img/sicrets/small/s-1.jpg" media="(max-width: 468px)">
+                      <source srcset="./img/sicrets/s-1.jpg">
+                      <img src="./img/sicrets/s-1.jpg" alt="">
+                    </picture>
                     <p class="sicrets__list-text">
                       רצינו לא רק להרגיש אלא גם לראות מה קורה לשיער לאחר שימוש במוצרי ד"ר סורבי בשלבים שונים של השפעה
                       לשיער. לשם כך ערכנו במעבדה מחקר מעמיק מיוחד בסיוע טכנולוגי של אוניברסיטת בן גוריון באר שבע.
@@ -1562,7 +1614,11 @@
 
           </div>
           <div class="consultation__item">
-            <img src="./img/consultation/cons-bg.jpg" alt="">
+            <picture>
+              <source srcset="./img/consultation/cons-bg-mob.jpg" media="(max-width: 468px)">
+              <source srcset="./img/consultation/cons-bg.jpg">
+              <img src="./img/consultation/cons-bg.jpg" alt="">
+            </picture>
           </div>
         </div>
       </div>
@@ -1578,22 +1634,38 @@
         <div class="social__img-wrapper">
           <!--noindex-->
           <a href="https://www.instagram.com/" class="social__img-link" target="_blank" rel="noopener nofollow">
-            <img src="./img/social/si-1.jpg" alt="" class="social__img">
+            <picture>
+              <source srcset="./img/social/small/si-4.jpg" media="(max-width: 468px)">
+              <source srcset="./img/social/si-4.jpg">
+              <img src="./img/social/si-4.jpg" alt="" class="social__img">
+            </picture>
           </a>
           <!--/noindex-->
           <!--noindex-->
           <a href="https://www.instagram.com/" class="social__img-link" target="_blank" rel="noopener nofollow">
-            <img src="./img/social/si-2.jpg" alt="" class="social__img">
+            <picture>
+              <source srcset="./img/social/small/si-3.jpg" media="(max-width: 468px)">
+              <source srcset="./img/social/si-3.jpg">
+              <img src="./img/social/si-3.jpg" alt="" class="social__img">
+            </picture>
           </a>
           <!--/noindex-->
           <!--noindex-->
           <a href="https://www.instagram.com/" class="social__img-link" target="_blank" rel="noopener nofollow">
-            <img src="./img/social/si-3.jpg" alt="" class="social__img">
+            <picture>
+              <source srcset="./img/social/small/si-2.jpg" media="(max-width: 468px)">
+              <source srcset="./img/social/si-2.jpg">
+              <img src="./img/social/si-2.jpg" alt="" class="social__img">
+            </picture>
           </a>
           <!--/noindex-->
           <!--noindex-->
           <a href="https://www.instagram.com/" class="social__img-link" target="_blank" rel="noopener nofollow">
-            <img src="./img/social/si-4.jpg" alt="" class="social__img">
+            <picture>
+              <source srcset="./img/social/small/si-1.jpg" media="(max-width: 468px)">
+              <source srcset="./img/social/si-1.jpg">
+              <img src="./img/social/si-1.jpg" alt="" class="social__img">
+            </picture>
           </a>
           <!--/noindex-->
         </div>
@@ -1672,7 +1744,7 @@
   </main>
 
   <footer class="footer">
-    <div class="container">
+    <div class="container footer-container">
       <div class="footer__wrapper">
         <div class="footer__top">
           <div class="footer__item">

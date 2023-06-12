@@ -6,7 +6,7 @@
 		gap: 24px;
 		@include breakpoint (xlg) {
 			display: flex;
-			flex-direction: column;
+			flex-direction: column-reverse;
 			gap: 32px;
 		}
 	}
@@ -57,10 +57,16 @@
 					}
 				}
 			}
+			@include breakpoint (xs) {
+				background-image: url("./../img/banner/small/banner2.jpg");
+			}
 		}
 
 		&:nth-child(2) {
 			background-image: url("./../img/banner/banner1.jpg");
+			@include breakpoint (xs) {
+				background-image: url("./../img/banner/small/banner1.jpg");
+			}
 		}
 
 		@media (max-width: 1400px) {
@@ -135,7 +141,6 @@
 	}
 
 	&__text {
-		font-weight: 400;
 		font-size: 40px;
 		line-height: 60px;
 		text-align: right;
